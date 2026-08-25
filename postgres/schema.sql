@@ -130,6 +130,33 @@ CREATE TABLE IF NOT EXISTS nonconformities (
   updated_at timestamptz NOT NULL DEFAULT now()
 );
 
+CREATE TABLE IF NOT EXISTS corrective_tasks (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  audit_id uuid NOT NULL REFERENCES audits(id) ON DELETE CASCADE,
+  area_id uuid NOT NULL REFERENCES areas(id) ON DELETE CASCADE,
+  criterion_key varchar(80) NOT NULL,
+  criterion_text text NOT NULL,
+  finding text,
+  status varchar(30) NOT NULL DEFAULT 'open',
+  due_at timestamptz NOT NULL DEFAULT (now() + interval '7 days'),
+  resolution_text text,
+  resolution_photo_url text,
+  resolved_by uuid REFERENCES users(id) ON DELETE SET NULL,
+  resolved_at timestamptz,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  UNIQUE (audit_id, criterion_key)
+);
+
+CREATE TABLE IF NOT EXISTS notifications (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  title varchar(180) NOT NULL,
+  message text NOT NULL,
+  target varchar(40) NOT NULL DEFAULT 'dashboard',
+  read_at timestamptz,
+  created_at timestamptz NOT NULL DEFAULT now()
+);
+
 CREATE TABLE IF NOT EXISTS workflow_events (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   audit_id uuid NOT NULL REFERENCES audits(id) ON DELETE CASCADE,

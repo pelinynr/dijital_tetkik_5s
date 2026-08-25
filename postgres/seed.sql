@@ -6,6 +6,15 @@ VALUES
   ('sorumlu2@erdemir.com.tr', 'DEMO_ONLY_REPLACE_WITH_BCRYPT_HASH', 'Çelikhane Alan Yöneticisi', 'area_owner')
 ON CONFLICT (email) DO NOTHING;
 
+INSERT INTO users (email, password_hash, full_name, role) VALUES
+  ('pelin.yener@erdemir.com.tr', 'DEMO_ONLY_REPLACE_WITH_BCRYPT_HASH', 'Pelin Yener', 'area_owner'),
+  ('nazar.uludag@erdemir.com.tr', 'DEMO_ONLY_REPLACE_WITH_BCRYPT_HASH', 'Nazar Uludağ', 'area_owner'),
+  ('ceyda.ankara@erdemir.com.tr', 'DEMO_ONLY_REPLACE_WITH_BCRYPT_HASH', 'Ceyda Ankara', 'area_owner'),
+  ('ozan.turkekul@erdemir.com.tr', 'DEMO_ONLY_REPLACE_WITH_BCRYPT_HASH', 'Ozan Türkekul', 'area_owner'),
+  ('hayati.can.aydin@erdemir.com.tr', 'DEMO_ONLY_REPLACE_WITH_BCRYPT_HASH', 'Hayati Can Aydın', 'area_owner'),
+  ('ozcan.kesici@erdemir.com.tr', 'DEMO_ONLY_REPLACE_WITH_BCRYPT_HASH', 'Özcan Kesici', 'area_owner')
+ON CONFLICT (email) DO NOTHING;
+
 INSERT INTO areas (area_code, name, owner_id)
 SELECT 'A-01', 'Sıcak Haddehane', id FROM users WHERE email = 'sorumlu@erdemir.com.tr'
 ON CONFLICT (area_code) DO NOTHING;
