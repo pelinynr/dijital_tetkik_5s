@@ -142,8 +142,11 @@ CREATE TABLE IF NOT EXISTS corrective_tasks (
   due_at timestamptz NOT NULL DEFAULT (now() + interval '7 days'),
   resolution_text text,
   resolution_photo_url text,
+  assigned_to uuid REFERENCES users(id) ON DELETE SET NULL,
   resolved_by uuid REFERENCES users(id) ON DELETE SET NULL,
   resolved_at timestamptz,
+  approved_by uuid REFERENCES users(id) ON DELETE SET NULL,
+  approved_at timestamptz,
   created_at timestamptz NOT NULL DEFAULT now(),
   UNIQUE (audit_id, criterion_key)
 );
