@@ -23,6 +23,17 @@ INSERT INTO areas (area_code, name, owner_id)
 SELECT 'A-02', 'Çelikhane', id FROM users WHERE email = 'sorumlu2@erdemir.com.tr'
 ON CONFLICT (area_code) DO NOTHING;
 
+INSERT INTO areas (area_code, name) VALUES
+  ('CELIK-MD', 'Çelikhane Müdürlüğü'),
+  ('YF-MD', 'Yüksek Fırın Müdürlüğü'),
+  ('SH-MD', 'Sıcak Haddehane Müdürlüğü'),
+  ('SGH-MD', 'Soğuk Haddehaneler Müdürlüğü'),
+  ('KOK-FAB', 'Kok Fabrikası Müdürlüğü'),
+  ('OKS-FAB', 'Oksijen Fabrikası'),
+  ('SINTER-FAB', 'Sinter Fabrikası'),
+  ('KIREC-FAB', 'Kireç Fabrikası')
+ON CONFLICT (area_code) DO UPDATE SET name = EXCLUDED.name;
+
 INSERT INTO criterion_versions (version_no, published, published_at, created_by)
 SELECT 'v1.0', true, now(), id FROM users WHERE email = 'admin@erdemir.com.tr'
 ON CONFLICT (version_no) DO NOTHING;

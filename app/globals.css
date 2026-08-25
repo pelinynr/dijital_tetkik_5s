@@ -113,6 +113,7 @@ button {
 }
 
 .login-copy {
+    display: none;
     position: absolute;
     left: 70px;
     bottom: 80px;
@@ -1710,7 +1711,13 @@ td select {
     border: 1px solid #ccc;
     border-radius: 7px;
     background: #fff;
+    color: #171717;
     padding: 10px
+}
+
+.criteria-head select option {
+    background: #fff;
+    color: #171717
 }
 
 .management-table .th,
