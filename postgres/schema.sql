@@ -1,7 +1,7 @@
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 DO $$ BEGIN
-  CREATE TYPE user_role AS ENUM ('admin', 'auditor', 'area_owner');
+  CREATE TYPE user_role AS ENUM ('admin', 'area_admin', 'auditor', 'area_owner');
 EXCEPTION WHEN duplicate_object THEN NULL;
 END $$;
 
@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS areas (
   area_code varchar(40) NOT NULL UNIQUE,
   name varchar(180) NOT NULL,
   owner_id uuid REFERENCES users(id) ON DELETE SET NULL,
+  manager_id uuid REFERENCES users(id) ON DELETE SET NULL,
   qr_token uuid NOT NULL UNIQUE DEFAULT gen_random_uuid(),
   active boolean NOT NULL DEFAULT true,
   created_at timestamptz NOT NULL DEFAULT now(),

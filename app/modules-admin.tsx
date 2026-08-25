@@ -2,7 +2,7 @@
 import {useEffect,useState} from "react";
 type Screen="dashboard"|"areas"|"criteria"|"plans"|"audit"|"issues"|"reports";
 type Area={id:string;area_code:string;name:string};
-type User={id:string;email:string;fullName:string;role:"admin"|"auditor"|"area_owner";areas:Area[]};
+type User={id:string;email:string;fullName:string;role:"admin"|"area_admin"|"auditor"|"area_owner";areas:Area[]};
 type Criterion={id:string;area_id:string;area_code:string;area_name:string;step:string;description:string;weight:string;active:boolean;approval_status:string;version_no:string};
 const API=process.env.NEXT_PUBLIC_API_BASE_URL||"http://localhost:4000";
 function Title({tag,title,text,action}:{tag:string;title:string;text:string;action?:React.ReactNode}){return <div className="module-title"><div>{!tag.startsWith("MODÜL")&&<span className="eyebrow">{tag}</span>}<h1>{title}</h1><p>{text}</p></div>{action}</div>}
