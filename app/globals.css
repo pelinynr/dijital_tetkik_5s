@@ -1828,7 +1828,7 @@ td select {
 
 .criteria-table .th,
 .criteria-table .tr {
-    grid-template-columns: 70px 1.7fr 80px 140px 70px
+    grid-template-columns: 60px minmax(260px,1.7fr) 120px 110px 90px 100px 75px
 }
 
 .planner {

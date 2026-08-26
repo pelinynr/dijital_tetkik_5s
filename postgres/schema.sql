@@ -64,6 +64,7 @@ CREATE TABLE IF NOT EXISTS criteria (
   approval_status varchar(20) NOT NULL DEFAULT 'draft' CHECK (approval_status IN ('draft', 'approved')),
   approved_by uuid REFERENCES users(id) ON DELETE SET NULL,
   approved_at timestamptz,
+  audit_period varchar(7),
   created_at timestamptz NOT NULL DEFAULT now()
 );
 
