@@ -45,3 +45,4 @@ yarn-error.log*
 /backend-api-error.log
 /frontend.log
 /frontend-error.log
+*.tsbuildinfo

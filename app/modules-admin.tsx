@@ -1,6 +1,6 @@
 "use client";
 import {useEffect,useState} from "react";
-type Screen="dashboard"|"areas"|"criteria"|"plans"|"audit"|"issues"|"reports";
+type Screen="dashboard"|"areas"|"criteria"|"plans"|"audit"|"issues"|"approvals"|"reports";
 type Area={id:string;area_code:string;name:string};
 type User={id:string;email:string;fullName:string;role:"admin"|"area_admin"|"auditor"|"area_owner";areas:Area[]};
 type Criterion={id:string;area_id:string;area_code:string;area_name:string;step:string;description:string;weight:string;active:boolean;approval_status:string;version_no:string;created_at:string;audit_period:string};
