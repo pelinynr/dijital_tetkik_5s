@@ -1741,6 +1741,50 @@ td select {
     font-size: 11px
 }
 
+.management-table button.audit-plan-row {
+    width: 100%;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    background: #fff;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background .18s ease, transform .18s ease
+}
+
+.management-table button.audit-plan-row:hover,
+.management-table button.audit-plan-row:focus-visible {
+    background: #fff4f2;
+    outline: 2px solid rgba(227, 30, 22, .2);
+    outline-offset: -2px
+}
+
+.auditor-plan-table .th,
+.auditor-plan-table .tr {
+    grid-template-columns: 130px 100px minmax(210px,1fr) minmax(300px,1.25fr) 115px
+}
+
+.plan-owner-control {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 6px;
+    align-items: center
+}
+
+.plan-owner-control select {
+    min-width: 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 7px;
+    background: #fff
+}
+
+.plan-owner-control small {
+    grid-column: 1 / -1;
+    color: #187650
+}
+
 .management-table .tr>span b,
 .management-table .tr>span small {
     display: block

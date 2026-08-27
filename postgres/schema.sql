@@ -75,6 +75,7 @@ CREATE TABLE IF NOT EXISTS audit_plans (
   area_id uuid NOT NULL REFERENCES areas(id) ON DELETE RESTRICT,
   primary_auditor_id uuid NOT NULL REFERENCES users(id) ON DELETE RESTRICT,
   backup_auditor_id uuid REFERENCES users(id) ON DELETE SET NULL,
+  assigned_owner_id uuid REFERENCES users(id) ON DELETE SET NULL,
   published boolean NOT NULL DEFAULT false,
   created_at timestamptz NOT NULL DEFAULT now(),
   UNIQUE (period, area_id)
