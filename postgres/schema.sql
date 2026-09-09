@@ -174,6 +174,7 @@ CREATE TABLE IF NOT EXISTS workflow_events (
 
 CREATE INDEX IF NOT EXISTS idx_areas_owner ON areas(owner_id);
 CREATE INDEX IF NOT EXISTS idx_criteria_area_version ON criteria(area_id, version_id);
+CREATE INDEX IF NOT EXISTS idx_criteria_area_period_status ON criteria(area_id, audit_period, approval_status, active);
 CREATE INDEX IF NOT EXISTS idx_audit_plans_auditor_date ON audit_plans(primary_auditor_id, audit_date);
 CREATE INDEX IF NOT EXISTS idx_audits_owner_updated ON audits(owner_id, updated_at DESC);
 CREATE INDEX IF NOT EXISTS idx_audits_area_status ON audits(area_id, status);

@@ -9,7 +9,9 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "start": "vinext start",
-    "test": "npm run build && node --check backend/src/server.js",
+    "backend:java": "powershell -ExecutionPolicy Bypass -File backend/run.ps1",
+    "backend:test": "powershell -ExecutionPolicy Bypass -File backend/test.ps1",
+    "test": "npm run build && npm run backend:test",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {

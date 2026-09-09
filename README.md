@@ -7,17 +7,22 @@ yönetmek için geliştirilen web tabanlı sistemdir.
 ## Teknolojiler
 
 - Arayüz: React 19, TypeScript, Vinext ve Vite
-- Backend: Node.js ve Express
+- Backend: Java 17 ve Spring Boot 3
 - Veritabanı: PostgreSQL 18
-- PostgreSQL istemcisi: node-postgres (`pg`)
-- Dosya yükleme: Multer
+- PostgreSQL erişimi: Spring JDBC ve PostgreSQL JDBC sürücüsü
+- Kimlik doğrulama: JWT ve BCrypt
+- Dosya yükleme: Spring Multipart
 
 ## Klasörler
 
 - `app/`: React arayüzü
-- `backend/`: PostgreSQL'e bağlanan REST API
+- `backend/`: Java/Spring Boot ile yazılmış PostgreSQL REST API'si
 - `postgres/`: veritabanı şeması ve örnek kayıtlar
 - `public/`: logo ve giriş ekranı görselleri
+
+Backend yalnızca Java/Spring Boot ile çalışır. Kök dizindeki `package.json`,
+`package-lock.json` ve Node.js bağımlılıkları React/Vinext arayüzünü çalıştırmak
+ve derlemek için gereklidir; backend kodu değildir.
 
 ## İlk kurulum
 
@@ -40,12 +45,10 @@ Copy-Item .env.local.example .env.local
 
 ## Çalıştırma
 
-Birinci terminal:
+Birinci terminal (Java backend):
 
 ```powershell
-cd backend
-npm install
-npm start
+npm run backend:java
 ```
 
 İkinci terminal:
@@ -58,6 +61,12 @@ npm run dev
 Arayüz: `http://localhost:3000`
 
 API sağlık kontrolü: `http://localhost:4000/api/health`
+
+Java backend testleri için:
+
+```powershell
+npm run backend:test
+```
 
 ## Güvenlik
 

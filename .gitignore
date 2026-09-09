@@ -41,8 +41,11 @@ yarn-error.log*
 /backend/node_modules/
 /backend/uploads/
 /backend/.npm-cache/
+/backend/target/
+/backend/.maven-repository/
 /backend-api.log
 /backend-api-error.log
 /frontend.log
 /frontend-error.log
 *.tsbuildinfo
+~$*.docx

@@ -1,0 +1,110 @@
+{"kind":"deck","id":"pr/7gz8wi","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"","type":"master","placeholders":[{"name":"title","type":"title","textPreview":"Başlık Metni"},{"name":"body","type":"body","textPreview":"Gövde Düzeyi Bir | Gövde Düzeyi İki | Gövde Düzeyi Üç | Gövde Düzeyi Dört | Gövde Düzeyi Beş"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Başlık Slaydı","placeholders":[{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout2.xml","name":"Başlık ve İçerik","placeholders":[{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout3.xml","name":"1_Başlık ve İçerik","placeholders":[{"name":"body","type":"body","textPreview":"Gövde Düzeyi Bir | Gövde Düzeyi İki | Gövde Düzeyi Üç | Gövde Düzeyi Dört | Gövde Düzeyi Beş"},{"name":"title","type":"title","textPreview":"Başlık Metni"}]}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"Dijital 5S Tetkik Sistemi","textShapes":2}
+{"kind":"textbox","id":"sh/or6hcvu5","slide":1,"name":"TextBox 1","text":"Dijital 5S Tetkik Sistemi","textPreview":"Dijital 5S Tetkik Sistemi","textChars":25,"textLines":1,"bbox":[659.92,283.4,383.51,118.4]}
+{"kind":"textbox","id":"sh/buh0nqtg","slide":1,"name":"Rectangle 2","text":"Pelin YENER\nERP ve Çevresel Uygulamalar Müdürlüğü\n29.08.2026","textPreview":"Pelin YENER | ERP ve Çevresel Uygulamalar Müdürlüğü | 29.08.2026","textChars":60,"textLines":3,"bbox":[659.92,419.8,387.09,138.94]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":"[Sources]\n- Kullanıcı tarafından sağlanan Erdemir sunum şablonu\n- Erdemir Dijital 5S Tetkik Sistemi proje akışı"}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"5S; düzeni kalıcı bir çalışma biçimine dönüştürür","textShapes":13}
+{"kind":"textbox","id":"sh/1wzix87i","slide":2,"name":"Title 5","placeholder":"title","text":"5S; düzeni kalıcı bir çalışma biçimine dönüştürür","textPreview":"5S; düzeni kalıcı bir çalışma biçimine dönüştürür","textChars":49,"textLines":1,"bbox":[85.33,34.77,874.37,54.8]}
+{"kind":"textbox","id":"sh/et8zmto7","slide":2,"name":"İçerik Yer Tutucusu 3","placeholder":"body","text":"5S; çalışma alanını ayıklama, düzenleme, temizleme, standartlaştırma ve disiplini sürdürme yaklaşımıdır.","textPreview":"5S; çalışma alanını ayıklama, düzenleme, temizleme, standartlaştırma ve disiplini sürdürme yaklaşımıdır.","textChars":104,"textLines":1,"bbox":[108,125,940,68]}
+{"kind":"textbox","id":"sh/9072xkry","slide":2,"name":"Metin kutusu 1","text":"2/10","textPreview":"2/10","textChars":4,"textLines":1,"bbox":[16.32,681.6,58.56,38.77]}
+{"kind":"textbox","id":"sh/zuh0vypc","slide":2,"text":"AYIKLA","textPreview":"AYIKLA","textChars":6,"textLines":1,"bbox":[110,250,175,105]}
+{"kind":"textbox","id":"sh/c76hk361","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[285,282,42,42]}
+{"kind":"textbox","id":"sh/d8zit87m","slide":2,"text":"DÜZENLE","textPreview":"DÜZENLE","textChars":7,"textLines":1,"bbox":[320,250,175,105]}
+{"kind":"textbox","id":"sh/q5ozitov","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[495,282,42,42]}
+{"kind":"textbox","id":"sh/r6x0rypg","slide":2,"text":"TEMİZLE","textPreview":"TEMİZLE","textChars":7,"textLines":1,"bbox":[530,250,175,105]}
+{"kind":"textbox","id":"sh/w3a1wn65","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[705,282,42,42]}
+{"kind":"textbox","id":"sh/xoji5s7q","slide":2,"text":"STANDARTLAŞTIR","textPreview":"STANDARTLAŞTIR","textChars":14,"textLines":1,"bbox":[740,250,175,105]}
+{"kind":"textbox","id":"sh/5kfipszu","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[915,282,42,42]}
+{"kind":"textbox","id":"sh/kj6hgny9","slide":2,"text":"SÜRDÜR","textPreview":"SÜRDÜR","textChars":6,"textLines":1,"bbox":[950,250,175,105]}
+{"kind":"textbox","id":"sh/jix0niho","slide":2,"text":"Amaç: güvenli, temiz, düzenli ve sürekli geliştirilen çalışma alanları","textPreview":"Amaç: güvenli, temiz, düzenli ve sürekli geliştirilen çalışma alanları","textChars":70,"textLines":1,"bbox":[160,415,950,55]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":"[Sources]\n- Kullanıcı tarafından sağlanan Erdemir sunum şablonu\n- Erdemir Dijital 5S Tetkik Sistemi proje akışı"}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"Proje, tetkik sürecini tek merkezde görünür kılar","textShapes":6}
+{"kind":"textbox","id":"sh/a10b6p03","slide":3,"name":"Title 5","placeholder":"title","text":"Proje, tetkik sürecini tek merkezde görünür kılar","textPreview":"Proje, tetkik sürecini tek merkezde görünür kılar","textChars":49,"textLines":1,"bbox":[85.33,34.77,874.37,54.8]}
+{"kind":"textbox","id":"sh/xoruhkje","slide":3,"name":"İçerik Yer Tutucusu 3","placeholder":"body","text":"Planlama, saha değerlendirmesi, fotoğraflı uygunsuzluk, düzeltme ve onay aynı akışta buluşur.","textPreview":"Planlama, saha değerlendirmesi, fotoğraflı uygunsuzluk, düzeltme ve onay aynı akışta buluşur.","textChars":93,"textLines":1,"bbox":[108,125,940,68]}
+{"kind":"textbox","id":"sh/cza94vmx","slide":3,"name":"Metin kutusu 1","text":"3/10","textPreview":"3/10","textChars":4,"textLines":1,"bbox":[16.32,681.6,58.56,38.77]}
+{"kind":"textbox","id":"sh/w3it8zit","slide":3,"text":"DAĞINIK SÜREÇ\n\nKağıt listeler\nParçalı takip\nGeciken geri bildirim","textPreview":"DAĞINIK SÜREÇ |  | Kağıt listeler | Parçalı takip | Geciken geri bildirim","textChars":65,"textLines":5,"bbox":[125,250,300,210]}
+{"kind":"textbox","id":"sh/nypcba1c","slide":3,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[485,330,42,42]}
+{"kind":"textbox","id":"sh/mxgb250r","slide":3,"text":"TEK MERKEZDEN YÖNETİM\n\nPlanla  •  Tetkik et  •  Belgele\nGörevlendir  •  Onayla  •  Raporla","textPreview":"TEK MERKEZDEN YÖNETİM |  | Planla  •  Tetkik et  •  Belgele | Görevlendir  •  Onayla  •  Raporla","textChars":90,"textLines":4,"bbox":[560,250,500,210]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":"[Sources]\n- Kullanıcı tarafından sağlanan Erdemir sunum şablonu\n- Erdemir Dijital 5S Tetkik Sistemi proje akışı"}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"Kazanç yalnızca düzen değil; hız, güven ve izlenebilirliktir","textShapes":7}
+{"kind":"textbox","id":"sh/tkjq5c3e","slide":4,"name":"Title 5","placeholder":"title","text":"Kazanç yalnızca düzen değil; hız, güven ve izlenebilirliktir","textPreview":"Kazanç yalnızca düzen değil; hız, güven ve izlenebilirliktir","textChars":60,"textLines":1,"bbox":[85.33,34.77,874.37,54.8]}
+{"kind":"textbox","id":"sh/6x8rahk3","slide":4,"name":"İçerik Yer Tutucusu 3","placeholder":"body","text":"Her müdürlük kendi alanını yönetirken global yönetici bütün resmi izler.","textPreview":"Her müdürlük kendi alanını yönetirken global yönetici bütün resmi izler.","textChars":72,"textLines":1,"bbox":[108,125,940,68]}
+{"kind":"textbox","id":"sh/1cj2d8b6","slide":4,"name":"Metin kutusu 1","text":"4/10","textPreview":"4/10","textChars":4,"textLines":1,"bbox":[16.32,681.6,58.56,38.77]}
+{"kind":"textbox","id":"sh/7ih83mlo","slide":4,"text":"HIZ\nGörev ve bildirimler anında ulaşır","textPreview":"HIZ | Görev ve bildirimler anında ulaşır","textChars":38,"textLines":2,"bbox":[120,230,470,125]}
+{"kind":"textbox","id":"sh/gna9gr25","slide":4,"text":"ŞEFFAFLIK\nHer adım ve sorumluluk görünürdür","textPreview":"ŞEFFAFLIK | Her adım ve sorumluluk görünürdür","textChars":43,"textLines":2,"bbox":[640,230,470,125]}
+{"kind":"textbox","id":"sh/hoja9w3q","slide":4,"text":"KANIT\nFotoğraf ve açıklama birlikte saklanır","textPreview":"KANIT | Fotoğraf ve açıklama birlikte saklanır","textChars":44,"textLines":2,"bbox":[120,395,470,125]}
+{"kind":"textbox","id":"sh/ulsrehkz","slide":4,"text":"TAKİP\nPuanlar ve geçmiş tetkikler izlenir","textPreview":"TAKİP | Puanlar ve geçmiş tetkikler izlenir","textChars":41,"textLines":2,"bbox":[640,395,470,125]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":"[Sources]\n- Kullanıcı tarafından sağlanan Erdemir sunum şablonu\n- Erdemir Dijital 5S Tetkik Sistemi proje akışı"}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"Bir tetkik, kapatılmış bir iyileştirmeye dönüşür","textShapes":15}
+{"kind":"textbox","id":"sh/9gfy5o7e","slide":5,"name":"Title 5","placeholder":"title","text":"Bir tetkik, kapatılmış bir iyileştirmeye dönüşür","textPreview":"Bir tetkik, kapatılmış bir iyileştirmeye dönüşür","textChars":48,"textLines":1,"bbox":[85.33,34.77,874.37,54.8]}
+{"kind":"textbox","id":"sh/mdoza9o3","slide":5,"name":"İçerik Yer Tutucusu 3","placeholder":"body","text":"QR ile başlayan saha kontrolü, yönetici onayıyla tamamlanan kapalı bir iyileştirme döngüsüdür.","textPreview":"QR ile başlayan saha kontrolü, yönetici onayıyla tamamlanan kapalı bir iyileştirme döngüsüdür.","textChars":94,"textLines":1,"bbox":[108,125,940,68]}
+{"kind":"textbox","id":"sh/dgbulwnm","slide":5,"name":"Metin kutusu 1","text":"5/10","textPreview":"5/10","textChars":4,"textLines":1,"bbox":[16.32,681.6,58.56,38.77]}
+{"kind":"textbox","id":"sh/nexg3epo","slide":5,"text":"PLANLA","textPreview":"PLANLA","textChars":6,"textLines":1,"bbox":[105,270,145,100]}
+{"kind":"textbox","id":"sh/0r6h8z6x","slide":5,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[250,300,42,42]}
+{"kind":"textbox","id":"sh/lcfy147i","slide":5,"text":"QR İLE BAŞLA","textPreview":"QR İLE BAŞLA","textChars":12,"textLines":1,"bbox":[282,270,145,100]}
+{"kind":"textbox","id":"sh/yp4z69or","slide":5,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[427,300,42,42]}
+{"kind":"textbox","id":"sh/zqxgzupc","slide":5,"text":"DEĞERLENDİR","textPreview":"DEĞERLENDİR","textChars":11,"textLines":1,"bbox":[459,270,145,100]}
+{"kind":"textbox","id":"sh/cnmh4z61","slide":5,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[604,300,42,42]}
+{"kind":"textbox","id":"sh/dovyx476","slide":5,"text":"UYGUNSUZLUĞU BELGELE","textPreview":"UYGUNSUZLUĞU BELGELE","textChars":20,"textLines":1,"bbox":[636,270,145,100]}
+{"kind":"textbox","id":"sh/t8n6lwvy","slide":5,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[781,300,42,42]}
+{"kind":"textbox","id":"sh/s7u5crud","slide":5,"text":"DÜZELT","textPreview":"DÜZELT","textChars":6,"textLines":1,"bbox":[813,270,145,100]}
+{"kind":"textbox","id":"sh/r6lojmds","slide":5,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[958,300,42,42]}
+{"kind":"textbox","id":"sh/65cnahc7","slide":5,"text":"ONAYLA","textPreview":"ONAYLA","textChars":6,"textLines":1,"bbox":[990,270,145,100]}
+{"kind":"textbox","id":"sh/5436hcv2","slide":5,"text":"Sonuç: 100 puan üzerinden ölçülen, kanıtlı ve tamamlanmış tetkik","textPreview":"Sonuç: 100 puan üzerinden ölçülen, kanıtlı ve tamamlanmış tetkik","textChars":64,"textLines":1,"bbox":[190,430,900,45]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":"[Sources]\n- Kullanıcı tarafından sağlanan Erdemir sunum şablonu\n- Erdemir Dijital 5S Tetkik Sistemi proje akışı"}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"Yetki, müdürlük ve görev sınırları içinde ilerler","textShapes":10}
+{"kind":"textbox","id":"sh/8f6x8jid","slide":6,"name":"Title 5","placeholder":"title","text":"Yetki, müdürlük ve görev sınırları içinde ilerler","textPreview":"Yetki, müdürlük ve görev sınırları içinde ilerler","textChars":49,"textLines":1,"bbox":[85.33,34.77,874.37,54.8]}
+{"kind":"textbox","id":"sh/7exwfehs","slide":6,"name":"İçerik Yer Tutucusu 3","placeholder":"body","text":"Her kullanıcı yalnızca sorumlu olduğu alanı ve görevi görür; global yönetici tüm sistemi yönetebilir.","textPreview":"Her kullanıcı yalnızca sorumlu olduğu alanı ve görevi görür; global yönetici tüm sistemi yönetebilir.","textChars":101,"textLines":1,"bbox":[108,125,940,68]}
+{"kind":"textbox","id":"sh/yhg7epsj","slide":6,"name":"Metin kutusu 1","text":"6/10","textPreview":"6/10","textChars":4,"textLines":1,"bbox":[16.32,681.6,58.56,38.77]}
+{"kind":"textbox","id":"sh/mdof6907","slide":6,"text":"GLOBAL YÖNETİCİ","textPreview":"GLOBAL YÖNETİCİ","textChars":15,"textLines":1,"bbox":[470,215,330,75]}
+{"kind":"textbox","id":"sh/lcfed4z2","slide":6,"text":"MÜDÜRLÜK YÖNETİCİSİ","textPreview":"MÜDÜRLÜK YÖNETİCİSİ","textChars":19,"textLines":1,"bbox":[470,330,330,75]}
+{"kind":"textbox","id":"sh/kb6d4zih","slide":6,"text":"TETKİKÇİ","textPreview":"TETKİKÇİ","textChars":8,"textLines":1,"bbox":[135,455,300,75]}
+{"kind":"textbox","id":"sh/zaxwbuhw","slide":6,"text":"ALAN SORUMLUSU","textPreview":"ALAN SORUMLUSU","textChars":14,"textLines":1,"bbox":[835,455,300,75]}
+{"kind":"textbox","id":"sh/y94v2p0b","slide":6,"text":"↓","textPreview":"↓","textChars":1,"textLines":1,"bbox":[605,290,60,35]}
+{"kind":"textbox","id":"sh/x8ve9kzq","slide":6,"text":"↙","textPreview":"↙","textChars":1,"textLines":1,"bbox":[390,400,60,55]}
+{"kind":"textbox","id":"sh/c7md0zi5","slide":6,"text":"↘","textPreview":"↘","textChars":1,"textLines":1,"bbox":[820,400,60,55]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":"[Sources]\n- Kullanıcı tarafından sağlanan Erdemir sunum şablonu\n- Erdemir Dijital 5S Tetkik Sistemi proje akışı"}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"Yönetici süreci kurar, yönlendirir ve sonucu onaylar","textShapes":6}
+{"kind":"textbox","id":"sh/290bq1cz","slide":7,"name":"Title 5","placeholder":"title","text":"Yönetici süreci kurar, yönlendirir ve sonucu onaylar","textPreview":"Yönetici süreci kurar, yönlendirir ve sonucu onaylar","textChars":52,"textLines":1,"bbox":[85.33,34.77,874.37,54.8]}
+{"kind":"textbox","id":"sh/pcra1wba","slide":7,"name":"İçerik Yer Tutucusu 3","placeholder":"body","text":"Müdürlük yöneticisi kendi alanında kriter, plan, tetkikçi ve düzeltme kararlarından sorumludur.","textPreview":"Müdürlük yöneticisi kendi alanında kriter, plan, tetkikçi ve düzeltme kararlarından sorumludur.","textChars":95,"textLines":1,"bbox":[108,125,940,68]}
+{"kind":"textbox","id":"sh/cb2tkvap","slide":7,"name":"Metin kutusu 1","text":"7/10","textPreview":"7/10","textChars":4,"textLines":1,"bbox":[16.32,681.6,58.56,38.77]}
+{"kind":"textbox","id":"sh/obitsrup","slide":7,"text":"KRİTERLER\n\nKendi alanının kontrol maddelerini oluşturur ve yönetir","textPreview":"KRİTERLER |  | Kendi alanının kontrol maddelerini oluşturur ve yönetir","textChars":66,"textLines":3,"bbox":[135,245,300,225]}
+{"kind":"textbox","id":"sh/betc36tg","slide":7,"text":"PLANLAMA\n\nTetkik tarihini ve tetkikçiyi belirler","textPreview":"PLANLAMA |  | Tetkik tarihini ve tetkikçiyi belirler","textChars":48,"textLines":3,"bbox":[480,245,300,225]}
+{"kind":"textbox","id":"sh/adkbu1cv","slide":7,"text":"KARAR\n\nDüzeltme kanıtını onaylar veya gerekçeyle reddeder","textPreview":"KARAR |  | Düzeltme kanıtını onaylar veya gerekçeyle reddeder","textChars":57,"textLines":3,"bbox":[825,245,300,225]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":"[Sources]\n- Kullanıcı tarafından sağlanan Erdemir sunum şablonu\n- Erdemir Dijital 5S Tetkik Sistemi proje akışı"}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"Tetkikçi tespit eder; alan sorumlusu iyileştirir","textShapes":6}
+{"kind":"textbox","id":"sh/xwvelwj2","slide":8,"name":"Title 5","placeholder":"title","text":"Tetkikçi tespit eder; alan sorumlusu iyileştirir","textPreview":"Tetkikçi tespit eder; alan sorumlusu iyileştirir","textChars":48,"textLines":1,"bbox":[85.33,34.77,874.37,54.8]}
+{"kind":"textbox","id":"sh/at4vq1kr","slide":8,"name":"İçerik Yer Tutucusu 3","placeholder":"body","text":"Sahadaki tespit ile çözümün belgelenmesi iki ayrı sorumluluk olarak yönetilir.","textPreview":"Sahadaki tespit ile çözümün belgelenmesi iki ayrı sorumluluk olarak yönetilir.","textChars":78,"textLines":1,"bbox":[108,125,940,68]}
+{"kind":"textbox","id":"sh/18byd4zy","slide":8,"name":"Metin kutusu 1","text":"8/10","textPreview":"8/10","textChars":4,"textLines":1,"bbox":[16.32,681.6,58.56,38.77]}
+{"kind":"textbox","id":"sh/budwj61c","slide":8,"text":"TETKİKÇİ\n\n• QR kodla tetkiği açar\n• Uygun / Uygun Değil seçer\n• Fotoğraf ve açıklama ekler\n• Alan sorumlusunu atar","textPreview":"TETKİKÇİ |  | • QR kodla tetkiği açar | • Uygun / Uygun Değil seçer | • Fotoğraf ve açıklama ekler | • Alan sorumlusunu atar","textChars":114,"textLines":6,"bbox":[120,235,470,280]}
+{"kind":"textbox","id":"sh/kjmdwbit","slide":8,"text":"ALAN SORUMLUSU\n\n• Kendine atanan görevi görür\n• Uygunsuzluğu giderir\n• Açıklama ve sonrası fotoğrafı ekler\n• Yönetici onayına gönderir","textPreview":"ALAN SORUMLUSU |  | • Kendine atanan görevi görür | • Uygunsuzluğu giderir | • Açıklama ve sonrası fotoğrafı ekler | • Yönetici onayına g...","textChars":134,"textLines":6,"bbox":[690,235,470,280]}
+{"kind":"textbox","id":"sh/lkvepgje","slide":8,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[610,340,42,42]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":"[Sources]\n- Kullanıcı tarafından sağlanan Erdemir sunum şablonu\n- Erdemir Dijital 5S Tetkik Sistemi proje akışı"}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"Bildirimler işi doğru kişiye, doğru zamanda taşır","textShapes":13}
+{"kind":"textbox","id":"sh/1wnm1sru","slide":9,"name":"Title 5","placeholder":"title","text":"Bildirimler işi doğru kişiye, doğru zamanda taşır","textPreview":"Bildirimler işi doğru kişiye, doğru zamanda taşır","textChars":49,"textLines":1,"bbox":[85.33,34.77,874.37,54.8]}
+{"kind":"textbox","id":"sh/e9w36ds3","slide":9,"name":"İçerik Yer Tutucusu 3","placeholder":"body","text":"Atama, son tarih, uygunsuzluk ve onay bekleyen işler kullanıcıların paneline düşer.","textPreview":"Atama, son tarih, uygunsuzluk ve onay bekleyen işler kullanıcıların paneline düşer.","textChars":83,"textLines":1,"bbox":[108,125,940,68]}
+{"kind":"textbox","id":"sh/1cfmhgne","slide":9,"name":"Metin kutusu 1","text":"9/10","textPreview":"9/10","textChars":4,"textLines":1,"bbox":[16.32,681.6,58.56,38.77]}
+{"kind":"textbox","id":"sh/fa54zi9o","slide":9,"text":"UYGUNSUZLUK\nBİLDİRİMİ","textPreview":"UYGUNSUZLUK | BİLDİRİMİ","textChars":21,"textLines":2,"bbox":[115,270,170,100]}
+{"kind":"textbox","id":"sh/s7el4nax","slide":9,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[285,300,42,42]}
+{"kind":"textbox","id":"sh/t8nmx8ri","slide":9,"text":"DÜZELTME\nKANITI","textPreview":"DÜZELTME | KANITI","textChars":15,"textLines":2,"bbox":[325,270,170,100]}
+{"kind":"textbox","id":"sh/65c32ds7","slide":9,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[495,300,42,42]}
+{"kind":"textbox","id":"sh/r654vi9c","slide":9,"text":"YÖNETİCİ\nİNCELEMESİ","textPreview":"YÖNETİCİ | İNCELEMESİ","textChars":19,"textLines":2,"bbox":[535,270,170,100]}
+{"kind":"textbox","id":"sh/43ul03a1","slide":9,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[705,300,42,42]}
+{"kind":"textbox","id":"sh/5432t8rm","slide":9,"text":"ONAY / RET","textPreview":"ONAY / RET","textChars":10,"textLines":1,"bbox":[745,270,170,100]}
+{"kind":"textbox","id":"sh/l0v2x4ja","slide":9,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[915,300,42,42]}
+{"kind":"textbox","id":"sh/kzm14z2p","slide":9,"text":"KAPANIŞ","textPreview":"KAPANIŞ","textChars":7,"textLines":1,"bbox":[955,270,170,100]}
+{"kind":"textbox","id":"sh/jyd0vu14","slide":9,"text":"Ret durumunda görev açıklamasıyla birlikte alan sorumlusuna geri döner","textPreview":"Ret durumunda görev açıklamasıyla birlikte alan sorumlusuna geri döner","textChars":70,"textLines":1,"bbox":[250,430,780,50]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":"[Sources]\n- Kullanıcı tarafından sağlanan Erdemir sunum şablonu\n- Erdemir Dijital 5S Tetkik Sistemi proje akışı"}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"Sade kullanıcı deneyimi, güçlü bir dijital temel","textShapes":7}
+{"kind":"textbox","id":"sh/pkbep4fe","slide":10,"name":"Title 5","placeholder":"title","text":"Sade kullanıcı deneyimi, güçlü bir dijital temel","textPreview":"Sade kullanıcı deneyimi, güçlü bir dijital temel","textChars":48,"textLines":1,"bbox":[85.33,34.77,874.37,54.8]}
+{"kind":"textbox","id":"sh/2hkfu9w3","slide":10,"name":"İçerik Yer Tutucusu 3","placeholder":"body","text":"Teknik ayrıntılar kullanıcıya yansımadan web, servis ve veritabanı birlikte çalışır.","textPreview":"Teknik ayrıntılar kullanıcıya yansımadan web, servis ve veritabanı birlikte çalışır.","textChars":84,"textLines":1,"bbox":[108,125,940,68]}
+{"kind":"textbox","id":"sh/xc3mho32","slide":10,"name":"Metin kutusu 1","text":"10/10","textPreview":"10/10","textChars":5,"textLines":1,"bbox":[16.32,681.6,58.56,38.77]}
+{"kind":"textbox","id":"sh/3itwnex8","slide":10,"text":"ARAYÜZ\nReact + TypeScript","textPreview":"ARAYÜZ | React + TypeScript","textChars":25,"textLines":2,"bbox":[120,230,470,125]}
+{"kind":"textbox","id":"sh/gfixszex","slide":10,"text":"BACKEND\nJava + Spring Boot","textPreview":"BACKEND | Java + Spring Boot","textChars":26,"textLines":2,"bbox":[640,230,470,125]}
+{"kind":"textbox","id":"sh/hgrel4fi","slide":10,"text":"VERİTABANI\nPostgreSQL","textPreview":"VERİTABANI | PostgreSQL","textChars":21,"textLines":2,"bbox":[120,395,470,125]}
+{"kind":"textbox","id":"sh/ud0vqpwr","slide":10,"text":"GELİŞTİRME\nVS Code • pgAdmin • GitHub","textPreview":"GELİŞTİRME | VS Code • pgAdmin • GitHub","textChars":37,"textLines":2,"bbox":[640,395,470,125]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":"[Sources]\n- Kullanıcı tarafından sağlanan Erdemir sunum şablonu\n- Erdemir Dijital 5S Tetkik Sistemi proje akışı"}

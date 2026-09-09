@@ -1,0 +1,101 @@
+{"kind":"deck","id":"pr/wexpy8","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"","type":"master","placeholders":[{"name":"title","type":"title","textPreview":"Başlık Metni"},{"name":"body","type":"body","textPreview":"Gövde Düzeyi Bir | Gövde Düzeyi İki | Gövde Düzeyi Üç | Gövde Düzeyi Dört | Gövde Düzeyi Beş"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Başlık Slaydı","placeholders":[{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout2.xml","name":"Başlık ve İçerik","placeholders":[{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout3.xml","name":"1_Başlık ve İçerik","placeholders":[{"name":"body","type":"body","textPreview":"Gövde Düzeyi Bir | Gövde Düzeyi İki | Gövde Düzeyi Üç | Gövde Düzeyi Dört | Gövde Düzeyi Beş"},{"name":"title","type":"title","textPreview":"Başlık Metni"}]}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"Slide 1","textShapes":0}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":""}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"DİJİTAL 5S Tetkik Sistemi","textShapes":2}
+{"kind":"textbox","id":"sh/gzydovul","slide":2,"name":"TextBox 1","text":"DİJİTAL 5S Tetkik Sistemi","textPreview":"DİJİTAL 5S Tetkik Sistemi","textChars":25,"textLines":1,"bbox":[659.92,283.4,383.51,119.56]}
+{"kind":"textbox","id":"sh/v2lc36dw","slide":2,"name":"Rectangle 2","text":"Pelin YENER\nERP ve Çevresel Uygulamalar Müdürlüğü\n01.09.2026","textPreview":"Pelin YENER | ERP ve Çevresel Uygulamalar Müdürlüğü | 01.09.2026","textChars":60,"textLines":3,"bbox":[659.92,419.8,387.09,138.94]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":""}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"5S Nedir?","textShapes":2}
+{"kind":"textbox","id":"sh/a10b6p03","slide":3,"name":"Title 5","placeholder":"title","text":"5S Nedir?","textPreview":"5S Nedir?","textChars":9,"textLines":1,"bbox":[85.33,34.77,874.37,54.8]}
+{"kind":"shape","id":"sh/cza94vmx","slide":3,"name":"Metin kutusu 1","bbox":[16.32,681.6,58.56,38.77]}
+{"kind":"textbox","id":"sh/d0jax03i","slide":3,"name":"İçerik Yer Tutucusu 3","text":"5S; çalışma ortamlarının verimliliğini artırmak, iş güvenliğini sağlamak amacıyla geliştirilen 5 adımlı bir metodolojidir.\n1. Ayıklama (Seiri): Gereksiz veya ihtiyaç fazlası malzemelerin ortamdan uzaklaştırılması\n2. Düzen (Seiton): İhtiyaç dışı nesneler ayıklandıktan sonra elde kalan nesnelerin belirli kurallara göre yerleştirilmesi ve işaretlenmesi \n3. Temizlik (Seiso): Çalışma alanlarının ve ekipmanların temizlenmesi.\n4. Standartlaştırma (Seiketsu): Ayıklama, Düzen ve Temizlik aşamalarının tamamlanmasının ardından ortaya çıkan sistemli çalışma durumudur. \n5.Disiplin (Shitsuke): Diğer adımların sürekliliğini sağlamak için standartlaştırma adımı ile belirlenen standart ve kuralların düzenli olarak kontrol edildiği adımdır.","textPreview":"5S; çalışma ortamlarının verimliliğini artırmak, iş güvenliğini sağlamak amacıyla geliştirilen 5 adımlı bir metodolojidir. | 1. Ayıklama ...","textChars":732,"textLines":6,"bbox":[108.29,118.14,851.42,468.5]}
+{"kind":"image","id":"im/6ds32xkz","slide":3,"name":"Resim 3","bbox":[959,224,305,229]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":""}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"PROBLEM / ÇÖZÜM","textShapes":4}
+{"kind":"textbox","id":"sh/0ba143al","slide":4,"name":"Başlık 2","placeholder":"title","text":"PROBLEM / ÇÖZÜM","textPreview":"PROBLEM / ÇÖZÜM","textChars":15,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/ih8ju9sn","slide":4,"name":"Metin Yer Tutucusu 6","text":"PROBLEM\nKağıt / Excel takibi\n Dağınık fotoğraf ve kayıtlar\n Geciken görev ve onaylar\nGeriye dönük analizlerin yapılamaması","textPreview":"PROBLEM | Kağıt / Excel takibi |  Dağınık fotoğraf ve kayıtlar |  Geciken görev ve onaylar | Geriye dönük analizlerin yapılamaması","textChars":122,"textLines":5,"bbox":[161.03,253.76,372.5,253.98]}
+{"kind":"shape","id":"sh/x8vaxsfe","slide":4,"name":"Düz Ok Bağlayıcısı 9","bbox":[575.91,355.87,128.17,0]}
+{"kind":"textbox","id":"sh/5cva1cfq","slide":4,"name":"Dikdörtgen: Köşeleri Yuvarlatılmış 10","text":"ÇÖZÜM\n\nTek merkezden planlanan,\nfotoğrafla kanıtlanan, sonucu anında ölçülen ve verilerin veritabanında depolandığı dijital tetkik süreci","textPreview":"ÇÖZÜM |  | Tek merkezden planlanan, | fotoğrafla kanıtlanan, sonucu anında ölçülen ve verilerin veritabanında depolandığı dijital tetkik ...","textChars":137,"textLines":4,"bbox":[730.84,253.76,372.5,253.98]}
+{"kind":"textbox","id":"sh/i94r6xgz","slide":4,"name":"Metin kutusu 11","text":"Fabrika sınırları içerisinde 5S tetkik süreçleri alanlar, kriter tabloları, tetkik planları Excel üzerinden yapılıp puanlamalar, uygunsuzluk takipleri manuel olarak yapılmaktadır. Bu durum hem süreci yavaşlatmakta hem detaylı inceleme sağlanmamasına yol açmaktadır.\n","textPreview":"Fabrika sınırları içerisinde 5S tetkik süreçleri alanlar, kriter tabloları, tetkik planları Excel üzerinden yapılıp puanlamalar, uygunsuz...","textChars":266,"textLines":2,"bbox":[86.37,121.79,1108.99,116.32]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":""}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"YETKİLENDİRMELER","textShapes":1}
+{"kind":"textbox","id":"sh/cf2tcr61","slide":5,"name":"Başlık 2","placeholder":"title","text":"YETKİLENDİRMELER","textPreview":"YETKİLENDİRMELER","textChars":16,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"table","id":"tb/m94nadsn","slide":5,"name":"Tablo 4","rows":5,"cols":2,"preview":"KULLANICILAR | YETKİ","bbox":[110.45,179.61,963.1,387.27]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":""}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"UÇTAN UCA AKIŞ ŞEMASI","textShapes":8}
+{"kind":"textbox","id":"sh/zi98nu94","slide":6,"name":"Başlık 2","placeholder":"title","text":"UÇTAN UCA AKIŞ ŞEMASI","textPreview":"UÇTAN UCA AKIŞ ŞEMASI","textChars":21,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/98rqt4r6","slide":6,"name":"Dikdörtgen: Köşeleri Yuvarlatılmış 4","text":"1. Adım\nPLANLAMA\n\nYönetici; kriteri, dönemi ve tetkikçiyi tanımlar.","textPreview":"1. Adım | PLANLAMA |  | Yönetici; kriteri, dönemi ve tetkikçiyi tanımlar.","textChars":67,"textLines":4,"bbox":[95,245,250,210]}
+{"kind":"textbox","id":"sh/7m98ru9g","slide":6,"name":"Dikdörtgen 6","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[345,325,42,42]}
+{"kind":"textbox","id":"sh/pc76hkr2","slide":6,"name":"Dikdörtgen: Köşeleri Yuvarlatılmış 8","text":"2. Adım\nSAHA\n\nTetkikçi QR ile kontrolü açar ve sonucu kaydeder. Uygunsuzluk durumu varsa fotoğraflar.","textPreview":"2. Adım | SAHA |  | Tetkikçi QR ile kontrolü açar ve sonucu kaydeder. Uygunsuzluk durumu varsa fotoğraflar.","textChars":101,"textLines":4,"bbox":[385,245,250,210]}
+{"kind":"textbox","id":"sh/w32twb6l","slide":6,"name":"Dikdörtgen 10","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[635,325,42,42]}
+{"kind":"textbox","id":"sh/u1kbu1ov","slide":6,"name":"Dikdörtgen: Köşeleri Yuvarlatılmış 12","text":"3. Adım\nDÜZELTME\n\nAlan sorumlusu uygunsuzluk halinde, açıklama ve fotoğrafla sorunun giderildiğini belgeler ve onay bekler.","textPreview":"3. Adım | DÜZELTME |  | Alan sorumlusu uygunsuzluk halinde, açıklama ve fotoğrafla sorunun giderildiğini belgeler ve onay bekler.","textChars":123,"textLines":4,"bbox":[675,245,250,210]}
+{"kind":"textbox","id":"sh/47mt0b6x","slide":6,"name":"Dikdörtgen 14","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[925,325,42,42]}
+{"kind":"textbox","id":"sh/i54bylor","slide":6,"name":"Dikdörtgen: Köşeleri Yuvarlatılmış 16","text":"4. Adım\nKARAR\n\nYönetici kanıtı onaylar veya gerekçeyle iade eder. Süreç sonlanmış olur.","textPreview":"4. Adım | KARAR |  | Yönetici kanıtı onaylar veya gerekçeyle iade eder. Süreç sonlanmış olur.","textChars":87,"textLines":4,"bbox":[965,245,250,210]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":""}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"Proje Mimarisi","textShapes":4}
+{"kind":"textbox","id":"sh/dcbud0ra","slide":7,"name":"Başlık 2","placeholder":"title","text":"Proje Mimarisi","textPreview":"Proje Mimarisi","textChars":14,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/zedcfa9g","slide":7,"name":"Dikdörtgen: Köşeleri Yuvarlatılmış 4","text":"FRONTEND (ARAYÜZ)\nReact + TypeScript","textPreview":"FRONTEND (ARAYÜZ) | React + TypeScript","textChars":36,"textLines":2,"bbox":[251.53,195.1,341.68,131.9]}
+{"kind":"textbox","id":"sh/l0vuh0rm","slide":7,"name":"Dikdörtgen: Köşeleri Yuvarlatılmış 6","text":"BACKEND (ARKAYÜZ)\nJava + Spring Boot","textPreview":"BACKEND (ARKAYÜZ) | Java + Spring Boot","textChars":36,"textLines":2,"bbox":[676.13,195.1,341.68,131.9]}
+{"kind":"textbox","id":"sh/fi9c369c","slide":7,"name":"Dikdörtgen: Köşeleri Yuvarlatılmış 8","text":"VERİTABANI\nPostgreSQL","textPreview":"VERİTABANI | PostgreSQL","textChars":21,"textLines":2,"bbox":[476.9,377.09,341.68,131.9]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":""}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"Sisteme Giriş","textShapes":1}
+{"kind":"textbox","id":"sh/g72x4zyd","slide":8,"name":"Başlık 2","placeholder":"title","text":"Sisteme Giriş","textPreview":"Sisteme Giriş","textChars":13,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"image","id":"im/y18zu1g7","slide":8,"name":"20260831-0632-34.5894721","bbox":[85,110,1110,501]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":"Bu sayfa videonun durağan önizlemesidir. Gömülü video düzenleme aracında korunamadı. PowerPoint içinde orijinal sunumdaki 8. sayfayı Kaynak Biçimlendirmesini Koru seçeneği ile kopyalayın."}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"Global Yönetici: Genel Bakış","textShapes":2}
+{"kind":"textbox","id":"sh/0b65obm9","slide":9,"name":"Başlık 2","placeholder":"title","text":"Global Yönetici: Genel Bakış","textPreview":"Global Yönetici: Genel Bakış","textChars":28,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/mdonql4z","slide":9,"name":"Ekran açıklaması","text":"Global yönetici, tüm birimlerin puanlarını ve açık uygunsuzluklarını tek ekrandan izler.","textPreview":"Global yönetici, tüm birimlerin puanlarını ve açık uygunsuzluklarını tek ekrandan izler.","textChars":88,"textLines":1,"bbox":[85,580,1110,54]}
+{"kind":"image","id":"im/2poj6xw3","slide":9,"name":"Resim 6","bbox":[222.1,112,835.81,448]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":"[Sources]\nKullanıcının Pelin_Yener_Sunum.pptx sunumundaki uygulama ekranı.\n[/Sources]"}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"Müdürlük Yöneticisi: Birim Takibi","textShapes":2}
+{"kind":"textbox","id":"sh/cbu58j2h","slide":10,"name":"Başlık 2","placeholder":"title","text":"Müdürlük Yöneticisi: Birim Takibi","textPreview":"Müdürlük Yöneticisi: Birim Takibi","textChars":33,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/ydcnatkn","slide":10,"name":"Ekran açıklaması","text":"Müdürlük yöneticisi, yalnızca kendi biriminin tetkik puanlarını ve mevcut durumunu takip eder.","textPreview":"Müdürlük yöneticisi, yalnızca kendi biriminin tetkik puanlarını ve mevcut durumunu takip eder.","textChars":94,"textLines":1,"bbox":[85,580,1110,54]}
+{"kind":"image","id":"im/6xgry54n","slide":10,"name":"Resim 4","bbox":[90,126.45,1100,419.1]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":"[Sources]\nKullanıcının Pelin_Yener_Sunum.pptx sunumundaki uygulama ekranı.\n[/Sources]"}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"Döneme Özel Kriter Belirleme","textShapes":2}
+{"kind":"textbox","id":"sh/wbih4b6d","slide":11,"name":"Başlık 2","placeholder":"title","text":"Döneme Özel Kriter Belirleme","textPreview":"Döneme Özel Kriter Belirleme","textChars":28,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/98rytw72","slide":11,"name":"Ekran açıklaması","text":"Yönetici, ilgili ay ve alan için kriterleri tanımlar; onaylanan kriterler tetkikçiye açılır.","textPreview":"Yönetici, ilgili ay ve alan için kriterleri tanımlar; onaylanan kriterler tetkikçiye açılır.","textChars":92,"textLines":1,"bbox":[85,580,1110,54]}
+{"kind":"image","id":"im/fylg76hc","slide":11,"name":"Resim 6","bbox":[250.04,112,779.93,448]}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":"[Sources]\nKullanıcının Pelin_Yener_Sunum.pptx sunumundaki uygulama ekranı.\n[/Sources]"}
+{"kind":"slide","id":"sl/8f2psfyx","slide":12,"title":"Tetkik Planlama ve Atama","textShapes":2}
+{"kind":"textbox","id":"sh/0f2lgnmp","slide":12,"name":"Başlık 2","placeholder":"title","text":"Tetkik Planlama ve Atama","textPreview":"Tetkik Planlama ve Atama","textChars":24,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/sb2lcnmd","slide":12,"name":"Ekran açıklaması","text":"Yönetici, tetkik tarihini ve tetkikçiyi belirler. Kaydedilen plan, atanan kullanıcının ekranına düşer.","textPreview":"Yönetici, tetkik tarihini ve tetkikçiyi belirler. Kaydedilen plan, atanan kullanıcının ekranına düşer.","textChars":102,"textLines":1,"bbox":[85,580,1110,54]}
+{"kind":"image","id":"im/83at8zyl","slide":12,"name":"Resim 8","bbox":[253.72,112,772.56,448]}
+{"kind":"notes","id":"nt/8f2psfyx","slide":12,"text":"[Sources]\nKullanıcının Pelin_Yener_Sunum.pptx sunumundaki uygulama ekranı.\n[/Sources]"}
+{"kind":"slide","id":"sl/hgzapcr6","slide":13,"title":"Tetkikçi: Atanan Planlar","textShapes":2}
+{"kind":"textbox","id":"sh/bq9orito","slide":13,"name":"Başlık 2","placeholder":"title","text":"Tetkikçi: Atanan Planlar","textPreview":"Tetkikçi: Atanan Planlar","textChars":24,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/p4r6p8by","slide":13,"name":"Ekran açıklaması","text":"Tetkikçi, kendisine atanan planı açar ve kendi birimindeki alan sorumlusunu seçer.","textPreview":"Tetkikçi, kendisine atanan planı açar ve kendi birimindeki alan sorumlusunu seçer.","textChars":82,"textLines":1,"bbox":[85,580,1110,54]}
+{"kind":"image","id":"im/dcvmdk7y","slide":13,"name":"Resim 6","bbox":[272.92,112,734.16,448]}
+{"kind":"notes","id":"nt/hgzapcr6","slide":13,"text":"[Sources]\nKullanıcının Pelin_Yener_Sunum.pptx sunumundaki uygulama ekranı.\n[/Sources]"}
+{"kind":"slide","id":"sl/6lsnupw7","slide":14,"title":"Kriterlerin Değerlendirilmesi","textShapes":2}
+{"kind":"textbox","id":"sh/wbydknq1","slide":14,"name":"Başlık 2","placeholder":"title","text":"Kriterlerin Değerlendirilmesi","textPreview":"Kriterlerin Değerlendirilmesi","textChars":29,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/kfidonqx","slide":14,"name":"Ekran açıklaması","text":"Kriterler “Uygun” veya “Uygun Değil” olarak değerlendirilir; tetkik puanı ekranda takip edilir.","textPreview":"Kriterler “Uygun” veya “Uygun Değil” olarak değerlendirilir; tetkik puanı ekranda takip edilir.","textChars":95,"textLines":1,"bbox":[85,580,1110,54]}
+{"kind":"image","id":"im/47y107ed","slide":14,"name":"Resim 10","bbox":[299.56,112,680.87,448]}
+{"kind":"notes","id":"nt/6lsnupw7","slide":14,"text":"[Sources]\nKullanıcının Pelin_Yener_Sunum.pptx sunumundaki uygulama ekranı.\n[/Sources]"}
+{"kind":"slide","id":"sl/vaxsvy10","slide":15,"title":"Uygunsuzluğun Belgelenmesi","textShapes":2}
+{"kind":"textbox","id":"sh/k3y5ov21","slide":15,"name":"Başlık 2","placeholder":"title","text":"Uygunsuzluğun Belgelenmesi","textPreview":"Uygunsuzluğun Belgelenmesi","textChars":26,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/t87ml0ji","slide":15,"name":"Ekran açıklaması","text":"Tetkikçi, uygunsuzluğu açıklama ve fotoğrafla kaydeder; düzeltme için alan sorumlusu atar.","textPreview":"Tetkikçi, uygunsuzluğu açıklama ve fotoğrafla kaydeder; düzeltme için alan sorumlusu atar.","textChars":90,"textLines":1,"bbox":[85,580,1110,54]}
+{"kind":"image","id":"im/vqlsvipg","slide":15,"name":"Resim 8","bbox":[235.86,112,808.27,448]}
+{"kind":"notes","id":"nt/vaxsvy10","slide":15,"text":"[Sources]\nKullanıcının Pelin_Yener_Sunum.pptx sunumundaki uygulama ekranı.\n[/Sources]"}
+{"kind":"slide","id":"sl/gny5sjyp","slide":16,"title":"Alan Sorumlusu: Düzeltme Görevi","textShapes":2}
+{"kind":"textbox","id":"sh/9kby1g7m","slide":16,"name":"Başlık 2","placeholder":"title","text":"Alan Sorumlusu: Düzeltme Görevi","textPreview":"Alan Sorumlusu: Düzeltme Görevi","textChars":31,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/zutgvm94","slide":16,"name":"Ekran açıklaması","text":"Alan sorumlusu, sorunu giderir; açıklama ve sonrasına ait fotoğrafı ekleyerek yönetici onayına gönderir.","textPreview":"Alan sorumlusu, sorunu giderir; açıklama ve sonrasına ait fotoğrafı ekleyerek yönetici onayına gönderir.","textChars":104,"textLines":1,"bbox":[85,580,1110,54]}
+{"kind":"image","id":"im/by5kzaxk","slide":16,"name":"Resim 4","bbox":[188.13,112,903.74,448]}
+{"kind":"notes","id":"nt/gny5sjyp","slide":16,"text":"[Sources]\nKullanıcının Pelin_Yener_Sunum.pptx sunumundaki uygulama ekranı.\n[/Sources]"}
+{"kind":"slide","id":"sl/14bup87q","slide":17,"title":"Yönetici: Düzeltme Onayı","textShapes":2}
+{"kind":"textbox","id":"sh/gbedwfmx","slide":17,"name":"Başlık 2","placeholder":"title","text":"Yönetici: Düzeltme Onayı","textPreview":"Yönetici: Düzeltme Onayı","textChars":24,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/jilcvq54","slide":17,"name":"Ekran açıklaması","text":"Yönetici, açıklama ve görselleri inceler; düzeltmeyi onaylar veya gerekçesiyle geri gönderir.","textPreview":"Yönetici, açıklama ve görselleri inceler; düzeltmeyi onaylar veya gerekçesiyle geri gönderir.","textChars":93,"textLines":1,"bbox":[85,580,1110,54]}
+{"kind":"image","id":"im/l4vm187i","slide":17,"name":"Resim 10","bbox":[290.75,112,698.5,448]}
+{"kind":"notes","id":"nt/14bup87q","slide":17,"text":"[Sources]\nKullanıcının Pelin_Yener_Sunum.pptx sunumundaki uygulama ekranı.\n[/Sources]"}
+{"kind":"slide","id":"sl/y5wne50z","slide":18,"title":"Geçmiş Belgelemelerin Takibi","textShapes":2}
+{"kind":"textbox","id":"sh/hsn2l4bu","slide":18,"name":"Başlık 2","placeholder":"title","text":"Geçmiş Belgelemelerin Takibi","textPreview":"Geçmiş Belgelemelerin Takibi","textChars":28,"textLines":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/4felwzu5","slide":18,"name":"Ekran açıklaması","text":"Alan sorumlusu, daha önce yaptığı düzeltmeleri ve eklediği görselleri geçmiş kayıtlarından görüntüler.","textPreview":"Alan sorumlusu, daha önce yaptığı düzeltmeleri ve eklediği görselleri geçmiş kayıtlarından görüntüler.","textChars":102,"textLines":1,"bbox":[85,580,1110,54]}
+{"kind":"image","id":"im/2h0bax0b","slide":18,"name":"Resim 6","bbox":[252.23,112,775.55,448]}
+{"kind":"notes","id":"nt/y5wne50z","slide":18,"text":"[Sources]\nKullanıcının Pelin_Yener_Sunum.pptx sunumundaki uygulama ekranı.\n[/Sources]"}
+{"kind":"slide","id":"sl/nid43ytk","slide":19,"title":"TEŞEKKÜRLER...","textShapes":1}
+{"kind":"textbox","id":"sh/9gb6xgbi","slide":19,"name":"Metin kutusu 1","text":"TEŞEKKÜRLER...","textPreview":"TEŞEKKÜRLER...","textChars":14,"textLines":1,"bbox":[444.73,534.68,383.14,64.62]}
+{"kind":"notes","id":"nt/nid43ytk","slide":19,"text":""}

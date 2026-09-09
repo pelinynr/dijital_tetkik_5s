@@ -1,23 +1,164 @@
 "use client";
-import {useEffect,useState} from "react";
-type Status="Uygun"|"Uygun Değil"|"Bekliyor";
-type Row={id:string|number;category:string;item:string;weight:number;status:Status;note:string;photos:string[]};
-function Title({tag,title,text,action}:{tag:string;title:string;text:string;action?:React.ReactNode}){return <div className="module-title"><div>{!tag.startsWith("MODÜL")&&<span className="eyebrow">{tag}</span>}<h1>{title}</h1><p>{text}</p></div>{action}</div>}
-export function Audit({rows,score,done,search,setSearch,update,openEvidence,openQr,save,complete,saveState}:{rows:Row[];score:number;done:number;search:string;setSearch:(v:string)=>void;update:(id:string|number,p:Partial<Row>)=>void;openEvidence:(id:string|number)=>void;openQr:()=>void;save:()=>void;complete:()=>void;saveState:string}){return <><Title tag="MOBİL TETKİK" title="Atanmış Alan 5S Tetkiki" text="Müdürlük yöneticisinin onayladığı kriterleri Uygun veya Uygun Değil olarak değerlendirin." action={<div className="action-row"><button className="outline" onClick={openQr}>▦ Alan QR</button><button className="primary" onClick={save}>{saveState}</button></div>}/><div className="stats"><article className="score"><div className="ring" style={{"--score":`${score*3.6}deg`} as React.CSSProperties}><b>{score}</b><small>/100</small></div><div><small>ANLIK PUAN</small><b>{score>=85?"İyi":score>=70?"Geliştirilmeli":"Kritik"}</b></div></article><article><i className="green">✓</i><div><small>TAMAMLANAN</small><b>{done} / {rows.length}</b></div></article><article><i className="red">!</i><div><small>UYGUN DEĞİL</small><b>{rows.filter(r=>r.status==="Uygun Değil").length}</b><p>Fotoğraf zorunlu</p></div></article></div><div className="sheet"><div className="sheetbar"><div><h3>Yönetici tarafından onaylanan kriterler</h3><p>Excel düzeninde değerlendirme</p></div><label className="search">⌕<input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Kriter ara..."/></label></div><div className="table"><table><thead><tr><th>#</th><th>5S ADIMI / KRİTER</th><th>AĞIRLIK</th><th>DEĞERLENDİRME</th><th>KANIT</th></tr></thead><tbody>{rows.filter(r=>(r.category+r.item).toLowerCase().includes(search.toLowerCase())).map((r,index)=><tr key={r.id} className={r.status==="Uygun Değil"?"bad":""}><td>{String(index+1).padStart(2,"0")}</td><td><small>{r.category}</small><b>{r.item}</b></td><td><em>{r.weight} puan</em></td><td><select className={r.status==="Uygun Değil"?"uygunsuz":r.status.toLocaleLowerCase("tr")} value={r.status} onChange={e=>update(r.id,{status:e.target.value as Status})}><option>Bekliyor</option><option>Uygun</option><option>Uygun Değil</option></select></td><td><button className="evidence" onClick={()=>openEvidence(r.id)}>{r.note||r.photos.length?"📷 Görüntüle":"＋ Kanıt ekle"}</button></td></tr>)}</tbody></table></div><footer><span>{!rows.length?"Bu alan için onaylanmış kriter bulunmuyor.":done<rows.length?`${rows.length-done} kriter bekliyor.`:"Tüm kriterler tamamlandı; tetkiki gönderebilirsiniz."}</span><button onClick={complete} disabled={!rows.length||done<rows.length||rows.some(r=>r.status==="Uygun Değil"&&(!r.photos.length||!(r as Row&{assigneeEmail?:string}).assigneeEmail))}>Tetkiki tamamla ve görevleri gönder →</button></footer></div></>}
-export function Issues({state,setState}:{state:string;setState:(s:string)=>void}){const[proof,setProof]=useState("");return <><Title tag="MODÜL 6" title="Uygunsuzluk ve düzeltici faaliyet" text="Sorumlu olduğunuz alanın aksiyonlarını takip edin."/><section className="panel"><span className="eyebrow">UYG-2026-0048</span><h2>Zemin işaretlemeleri yenilenecek</h2><p className="status-chip">{state}</p><label className="field">Giderme açıklaması<textarea defaultValue="Zemin temizlendi ve güvenlik şeritleri yenilendi."/></label><label className="field">Sonrası fotoğrafı<input type="file" accept="image/*" onChange={e=>setProof(e.target.files?.[0]?.name||"")}/><small>{proof||"Kanıt seçilmedi"}</small></label><div className="detail-actions">{state==="Düzeltme Bekliyor"?<button className="primary" onClick={()=>setState("Onay Bekliyor")}>Onaya gönder →</button>:<><button className="outline" onClick={()=>setState("Düzeltme Bekliyor")}>Reddet</button><button className="primary" onClick={()=>setState("Kapatıldı")}>Onayla ve kapat ✓</button></>}</div></section></>}
-export function Reports(){return <><Title tag="MODÜL 7" title="Raporlama ve performans" text="Yetkili olduğunuz alanların puan ve uygunsuzluk raporları."/><div className="kpis"><article><small>ORTALAMA PUAN</small><b>86,4</b></article><article><small>TAMAMLANAN</small><b>28</b></article><article><small>UYGUN DEĞİL</small><b>19</b></article><article><small>ORT. KAPANMA</small><b>3,2 gün</b></article></div></>}
+import { useEffect, useState } from "react";
+import { NonconformityReport } from "./nonconformity-report";
+type Status = "Uygun" | "Uygun Değil" | "Bekliyor";
+type Row = {
+    id: string | number;
+    category: string;
+    item: string;
+    weight: number;
+    status: Status;
+    note: string;
+    photos: string[];
+};
+function Title({ tag, title, text, action }: {
+    tag: string;
+    title: string;
+    text: string;
+    action?: React.ReactNode;
+}) { return <div className="module-title"><div>{!tag.startsWith("MODÜL") && <span className="eyebrow">{tag}</span>}<h1>{title}</h1><p>{text}</p></div>{action}</div>; }
+export function Audit({ rows, score, done, search, setSearch, update, openEvidence, openQr, save, complete, saveState }: {
+    rows: Row[];
+    score: number;
+    done: number;
+    search: string;
+    setSearch: (v: string) => void;
+    update: (id: string | number, p: Partial<Row>) => void;
+    openEvidence: (id: string | number) => void;
+    openQr: () => void;
+    save: () => void;
+    complete: () => void;
+    saveState: string;
+}) { return <><Title tag="MOBİL TETKİK" title="Atanmış Alan 5S Tetkiki" text="Admin tarafından onaylanan kriterleri Uygun veya Uygun Değil olarak değerlendirin." action={<div className="action-row"><button className="outline" onClick={openQr}>▦ Alan QR</button><button className="primary" onClick={save}>{saveState}</button></div>}/><div className="stats"><article className="score"><div className="ring" style={{ "--score": `${score * 3.6}deg` } as React.CSSProperties}><b>{score}</b><small>/100</small></div><div><small>ANLIK PUAN</small><b>{score >= 85 ? "İyi" : score >= 70 ? "Geliştirilmeli" : "Kritik"}</b></div></article><article><i className="green">✓</i><div><small>TAMAMLANAN</small><b>{done} / {rows.length}</b></div></article><article><i className="red">!</i><div><small>UYGUN DEĞİL</small><b>{rows.filter(r => r.status === "Uygun Değil").length}</b><p>Fotoğraf zorunlu</p></div></article></div><div className="sheet"><div className="sheetbar"><div><h3>Yönetici tarafından onaylanan kriterler</h3><p>Excel düzeninde değerlendirme</p></div><label className="search">⌕<input value={search} onChange={e => setSearch(e.target.value)} placeholder="Kriter ara..."/></label></div><div className="table"><table><thead><tr><th>#</th><th>5S ADIMI / KRİTER</th><th>AĞIRLIK</th><th>DEĞERLENDİRME</th><th>KANIT</th></tr></thead><tbody>{rows.filter(r => (r.category + r.item).toLowerCase().includes(search.toLowerCase())).map((r, index) => <tr key={r.id} className={r.status === "Uygun Değil" ? "bad" : ""}><td>{String(index + 1).padStart(2, "0")}</td><td><small>{r.category}</small><b>{r.item}</b></td><td><em>{r.weight} puan</em></td><td><select className={r.status === "Uygun Değil" ? "uygunsuz" : r.status.toLocaleLowerCase("tr")} value={r.status} onChange={e => update(r.id, { status: e.target.value as Status })}><option>Bekliyor</option><option>Uygun</option><option>Uygun Değil</option></select></td><td><button className="evidence" onClick={() => openEvidence(r.id)}>{r.note || r.photos.length ? "📷 Görüntüle" : "＋ Kanıt ekle"}</button></td></tr>)}</tbody></table></div><footer><span>{!rows.length ? "Bu alan için onaylanmış kriter bulunmuyor." : done < rows.length ? `${rows.length - done} kriter bekliyor.` : "Tüm kriterler tamamlandı; tetkiki gönderebilirsiniz."}</span><button onClick={complete} disabled={!rows.length || done < rows.length || rows.some(r => r.status === "Uygun Değil" && (!r.photos.length || !(r as Row & {
+    assigneeEmail?: string;
+}).assigneeEmail))}>Tetkiki tamamla ve görevleri gönder →</button></footer></div></>; }
+export function Issues({ state, setState }: {
+    state: string;
+    setState: (s: string) => void;
+}) { const [proof, setProof] = useState(""); return <><Title tag="MODÜL 6" title="Uygunsuzluk ve düzeltici faaliyet" text="Sorumlu olduğunuz alanın aksiyonlarını takip edin."/><section className="panel"><span className="eyebrow">UYG-2026-0048</span><h2>Zemin işaretlemeleri yenilenecek</h2><p className="status-chip">{state}</p><label className="field">Giderme açıklaması<textarea defaultValue="Zemin temizlendi ve güvenlik şeritleri yenilendi."/></label><label className="field">Sonrası fotoğrafı<input type="file" accept="image/*" onChange={e => setProof(e.target.files?.[0]?.name || "")}/><small>{proof || "Kanıt seçilmedi"}</small></label><div className="detail-actions">{state === "Düzeltme Bekliyor" ? <button className="primary" onClick={() => setState("Onay Bekliyor")}>Onaya gönder →</button> : <><button className="outline" onClick={() => setState("Düzeltme Bekliyor")}>Reddet</button><button className="primary" onClick={() => setState("Kapatıldı")}>Onayla ve kapat ✓</button></>}</div></section></>; }
+type ReportData = { scope: string; metrics: { score: number; completed: number; nonconforming: number; averageCloseDays: number }; areas: Array<{ id: string; area_code: string; name: string; score: number; completed: number; open_issues: number }> };
+export function Reports({ api, token }: { api: string; token: string }) {
+    const [data, setData] = useState<ReportData | null>(null), [error, setError] = useState("");
+    useEffect(() => { fetch(`${api}/api/reports`, { headers: { Authorization: `Bearer ${token}` } }).then(async r => { const d = await r.json(); if (!r.ok) throw new Error(d.error); setData(d); }).catch(e => setError(e.message)); }, [api, token]);
+    const m = data?.metrics;
+    return <><Title tag="RAPORLAMA" title={data?.scope || "Yetkili alan raporu"} text="Bu rapor yalnızca hesabınıza atanmış müdürlük ve alanların sonuçlarını içerir."/>{error && <p className="danger-text">{error}</p>}<div className="kpis"><article><small>ALAN ORTALAMA PUANI</small><b>{m?.score ?? "—"}</b></article><article><small>TAMAMLANAN TETKİK</small><b>{m?.completed ?? "—"}</b></article><article><small>TOPLAM UYGUNSUZLUK</small><b>{m?.nonconforming ?? "—"}</b></article><article><small>ORT. KAPANMA</small><b>{m ? `${m.averageCloseDays} gün` : "—"}</b></article></div><section className="panel no-pad"><div className="management-table"><div className="th"><span>ALAN</span><span>ORTALAMA PUAN</span><span>TAMAMLANAN</span><span>AÇIK UYGUNSUZLUK</span><span>KAPSAM</span></div>{data?.areas.map(a => <div className="tr" key={a.id}><b>{a.area_code} · {a.name}</b><b>{Math.round(Number(a.score))}/100</b><span>{a.completed}</span><span>{a.open_issues}</span><span className="state aktif">Yalnızca yetkili alan</span></div>)}</div>{data && !data.areas.length && <p style={{ padding: 24 }}>Yetkili olduğunuz bir alan bulunmuyor.</p>}</section><NonconformityReport api={api} token={token}/></>;
+}
+type HistoryRow = {
+    audit_no: string;
+    score: string;
+    status: string;
+    updated_at: string;
+    area_code: string;
+    area_name: string;
+};
+export function AuditHistory({ api, token }: {
+    api: string;
+    token: string;
+}) { const [rows, setRows] = useState<HistoryRow[]>([]), [error, setError] = useState(""); useEffect(() => { fetch(`${api}/api/audits/history`, { headers: { Authorization: `Bearer ${token}` } }).then(async (r) => { const d = await r.json(); if (!r.ok)
+    throw new Error(d.error); setRows(d.audits); }).catch(e => setError(e.message)); }, [api, token]); return <><Title tag="TETKİKÇİ" title="Geçmiş tetkiklerim" text="Yalnızca kendi tamamladığınız ve kaydettiğiniz tetkikleri görüntülersiniz."/><section className="panel no-pad"><div className="management-table"><div className="th"><span>TETKİK NO</span><span>ALAN</span><span>PUAN</span><span>DURUM</span><span>TARİH</span></div>{rows.map(r => <div className="tr" key={r.audit_no}><b>{r.audit_no}</b><span>{r.area_code} · {r.area_name}</span><b>{Math.round(Number(r.score))}/100</b><span className="state aktif">Kaydedildi</span><span>{new Date(r.updated_at).toLocaleString("tr-TR")}</span></div>)}</div>{!rows.length && !error && <p style={{ padding: 24 }}>Henüz kaydedilmiş tetkikiniz yok.</p>}{error && <p className="danger-text" style={{ padding: 24 }}>{error}</p>}</section></>; }
+type AssignedPlan = {
+    id: string;
+    period: string;
+    audit_date: string;
+    area_id: string;
+    area_code: string;
+    area_name: string;
+    auditor_name: string;
+    assigned_owner_name?: string;
+    assigned_owner_email?: string;
+};
+export function AuditorPlan({ api, token, onStart }: { api: string; token: string; onStart: (plan: AssignedPlan) => void }) {
+    const [plans,setPlans]=useState<AssignedPlan[]>([]),[message,setMessage]=useState("");
+    useEffect(()=>{const abort=new AbortController();fetch(`${api}/api/plans`,{headers:{Authorization:`Bearer ${token}`},signal:abort.signal}).then(async r=>{const d=await r.json();if(!r.ok)throw new Error(d.error);setPlans(d.plans);}).catch(e=>{if(!abort.signal.aborted)setMessage(e.message);});return()=>abort.abort();},[api,token]);
+    return <><Title tag="TETKİKÇİ" title="Bana atanan tetkik planları" text="Yalnızca admin tarafından onaylanmış planlar gösterilir. Alan sorumlusunu ünite sorumlusu belirler."/><section className="panel no-pad"><div className="management-table auditor-plan-table"><div className="th"><span>DÖNEM</span><span>TARİH</span><span>ALAN</span><span>ALAN SORUMLUSU</span><span>İŞLEM</span></div>{plans.map(p=><div className="tr" key={p.id}><b>{p.period}</b><span>{new Date(p.audit_date).toLocaleDateString("tr-TR")}</span><span>{p.area_code} · {p.area_name}</span><span>{p.assigned_owner_name||"Atanmadı"}<small>{p.assigned_owner_email}</small></span><button className="qr-button" onClick={()=>onStart(p)}>Tetkiki başlat →</button></div>)}</div>{message&&<p role="alert">{message}</p>}{!plans.length&&!message&&<p style={{padding:24}}>Adınıza onaylanmış tetkik planı bulunmuyor.</p>}</section></>;
+}
+type Task = {
+    id: string;
+    criterion_text: string;
+    finding: string;
+    status: string;
+    due_at: string;
+    resolution_text?: string;
+    resolution_photo_url?: string;
+    finding_photos?: string[];
+    area_code: string;
+    area_name: string;
+};
+export function AreaOwnerIssues({ api, token }: {
+    api: string;
+    token: string;
+}) { const [tasks, setTasks] = useState<Task[]>([]), [selected, setSelected] = useState<string>(""), [description, setDescription] = useState(""), [file, setFile] = useState<File | null>(null), [message, setMessage] = useState(""); const load = () => fetch(`${api}/api/corrective-tasks`, { headers: { Authorization: `Bearer ${token}` } }).then(async (r) => { const d = await r.json(); if (!r.ok)
+    throw new Error(d.error); setTasks(d.tasks); setSelected(current => d.tasks.some((t: Task) => t.id === current) ? current : (d.tasks[0]?.id || "")); }).catch(e => setMessage(e.message)); useEffect(() => { load(); }, [api, token]); const task = tasks.find(t => t.id === selected); const resolve = async () => { if (!task || !file || !description.trim())
+    return setMessage("Açıklama ve sonrası fotoğrafı zorunludur."); const form = new FormData(); form.set("description", description); form.set("file", file); const r = await fetch(`${api}/api/corrective-tasks/${task.id}/resolve`, { method: "POST", headers: { Authorization: `Bearer ${token}` }, body: form }); const d = await r.json(); if (!r.ok)
+    return setMessage(d.error); setMessage("Uygunsuzluk giderildi olarak kaydedildi."); setDescription(""); setFile(null); load(); };
+    return <>
+        <Title tag="ALAN SORUMLUSU" title="Alanımdaki uygunsuzluklar" text="Yalnızca sorumlu olduğunuz alana atanmış düzeltme görevlerini kapatabilirsiniz."/>
+        <div className="dashboard-grid">
+            <section className="panel">
+                <h3>Düzeltme görevleri</h3>
+                {tasks.map(t => <button key={t.id} className="activity" aria-pressed={selected === t.id} style={{ display: "block", width: "100%", textAlign: "left", padding: 14, marginTop: 8 }} onClick={() => { setSelected(t.id); setMessage(""); setDescription(""); setFile(null); }}>
+                    <b>{t.criterion_text}</b><small style={{ display: "block", marginTop: 5 }}>{t.area_code} · {t.area_name} · {t.status === "resolved" ? "Giderildi" : "Düzeltme bekliyor"}</small>
+                </button>)}
+                {!tasks.length && <p>Alanınıza atanmış uygunsuzluk bulunmuyor.</p>}
+                {task && <section className="finding-evidence" aria-label="Seçili görevin tetkikçi fotoğrafları">
+                    <h3>Tetkikçinin eklediği fotoğraflar</h3>
+                    <p>Uygunsuzluğun düzeltme öncesindeki durumu</p>
+                    {task.finding_photos === undefined
+                        ? <p role="alert">Sunucunun çalışan sürümü fotoğraf bilgisini göndermiyor. Java backend’i yeniden başlatıp sayfayı yenileyin.</p>
+                        : task.finding_photos.length
+                            ? task.finding_photos.map((url, index) => <FindingPhoto key={`${task.id}-${url}-${index}`} url={url} index={index} />)
+                            : <p>Bu uygunsuzluğa ait fotoğraf bulunmuyor.</p>}
+                </section>}
+            </section>
+            {task && <section className="panel" key={task.id}>
+                <span className="eyebrow">{task.area_code} · {task.status === "resolved" ? "GİDERİLDİ" : "DÜZELTME BEKLİYOR"}</span>
+                <h2>{task.criterion_text}</h2><p>{task.finding || "Tetkikçi açıklama girmedi."}</p>
+                <small>Son tarih: {new Date(task.due_at).toLocaleString("tr-TR")}</small>
+                {task.status === "resolved" ? <div><p><b>Giderme açıklaması:</b> {task.resolution_text}</p>{task.resolution_photo_url && <img src={task.resolution_photo_url} alt="Düzeltme kanıtı" style={{ maxWidth: "100%", borderRadius: 12 }}/>}</div> : <>
+                    <label className="field">Giderme açıklaması<textarea value={description} onChange={e => setDescription(e.target.value)} placeholder="Uygunsuzluğun nasıl giderildiğini açıklayın..."/></label>
+                    <label className="field">Sonrası fotoğrafı<input type="file" accept="image/*" capture="environment" onChange={e => setFile(e.target.files?.[0] || null)}/></label>
+                    <button className="primary" onClick={resolve}>Uygunsuzluk giderildi olarak kaydet</button>
+                </>}
+                {message && <p>{message}</p>}
+            </section>}
+        </div>
+    </>;
+}
 
-type HistoryRow={audit_no:string;score:string;status:string;updated_at:string;area_code:string;area_name:string};
-export function AuditHistory({api,token}:{api:string;token:string}){const[rows,setRows]=useState<HistoryRow[]>([]),[error,setError]=useState("");useEffect(()=>{fetch(`${api}/api/audits/history`,{headers:{Authorization:`Bearer ${token}`}}).then(async r=>{const d=await r.json();if(!r.ok)throw new Error(d.error);setRows(d.audits)}).catch(e=>setError(e.message))},[api,token]);return <><Title tag="TETKİKÇİ" title="Geçmiş tetkiklerim" text="Yalnızca kendi tamamladığınız ve kaydettiğiniz tetkikleri görüntülersiniz."/><section className="panel no-pad"><div className="management-table"><div className="th"><span>TETKİK NO</span><span>ALAN</span><span>PUAN</span><span>DURUM</span><span>TARİH</span></div>{rows.map(r=><div className="tr" key={r.audit_no}><b>{r.audit_no}</b><span>{r.area_code} · {r.area_name}</span><b>{Math.round(Number(r.score))}/100</b><span className="state aktif">Kaydedildi</span><span>{new Date(r.updated_at).toLocaleString("tr-TR")}</span></div>)}</div>{!rows.length&&!error&&<p style={{padding:24}}>Henüz kaydedilmiş tetkikiniz yok.</p>}{error&&<p className="danger-text" style={{padding:24}}>{error}</p>}</section></>}
-
-type AssignedPlan={id:string;period:string;audit_date:string;area_id:string;area_code:string;area_name:string;auditor_name:string;assigned_owner_name?:string;assigned_owner_email?:string};
-type PlanOwner={id:string;full_name:string;email:string;area_code:string;area_name:string};
-export function AuditorPlan({api,token,onStart}:{api:string;token:string;onStart:(plan:AssignedPlan)=>void}){const[plans,setPlans]=useState<AssignedPlan[]>([]),[owners,setOwners]=useState<PlanOwner[]>([]),[choices,setChoices]=useState<Record<string,string>>({}),[message,setMessage]=useState("");const headers={Authorization:`Bearer ${token}`};const load=()=>Promise.all([fetch(`${api}/api/plans`,{headers}),fetch(`${api}/api/audit/assignees`,{headers})]).then(async([p,o])=>{const pd=await p.json(),od=await o.json();if(!p.ok)throw new Error(pd.error);if(!o.ok)throw new Error(od.error);setPlans(pd.plans);setOwners(od.assignees||[]);setChoices(current=>Object.fromEntries(pd.plans.map((plan:AssignedPlan)=>[plan.id,current[plan.id]||plan.assigned_owner_email||od.assignees?.find((owner:PlanOwner)=>owner.area_code===plan.area_code)?.email||""])))}).catch(e=>setMessage(e.message));useEffect(()=>{load()},[api,token]);const assign=async(plan:AssignedPlan)=>{const email=choices[plan.id];if(!email)return setMessage("Alan sorumlusu seçin.");const r=await fetch(`${api}/api/plans/${plan.id}/assign-owner`,{method:"POST",headers:{...headers,"content-type":"application/json"},body:JSON.stringify({email})});const d=await r.json();setMessage(r.ok?`${d.owner.full_name}, ${plan.period} tetkiğine alan sorumlusu olarak atandı ve bildirim gönderildi.`:d.error);if(r.ok)load()};return <><Title tag="TETKİKÇİ" title="Bana atanan tetkik planı" text="Önce kendi müdürlüğünüzün alan sorumlusunu atayın; ardından satıra tıklayarak tetkiki başlatın."/><section className="panel no-pad"><div className="management-table auditor-plan-table"><div className="th"><span>DÖNEM</span><span>TARİH</span><span>ALAN</span><span>ALAN SORUMLUSU</span><span>İŞLEM</span></div>{plans.map(p=><div role="button" tabIndex={0} className="tr audit-plan-row" key={p.id} onClick={()=>onStart(p)} onKeyDown={e=>{if(e.key==="Enter"||e.key===" ")onStart(p)}}><b>{p.period}</b><span>{new Date(p.audit_date).toLocaleDateString("tr-TR")}</span><span><b>{p.area_code} · {p.area_name}</b><small>Tetkik ekranını aç</small></span><span className="plan-owner-control" onClick={e=>e.stopPropagation()} onKeyDown={e=>e.stopPropagation()}><select aria-label={`${p.period} alan sorumlusu`} value={choices[p.id]||""} onChange={e=>setChoices({...choices,[p.id]:e.target.value})}><option value="">Sorumlu seçin</option>{owners.filter(owner=>owner.area_code===p.area_code).map(owner=><option value={owner.email} key={owner.id}>{owner.full_name} · {owner.email}</option>)}</select><button type="button" className="qr-button" onClick={()=>assign(p)}>Ata</button>{p.assigned_owner_name&&<small>Atanmış: {p.assigned_owner_name}</small>}</span><span className="state aktif">Tetkiki başlat →</span></div>)}</div>{message&&<p style={{padding:"12px 18px"}}>{message}</p>}{!plans.length&&!message&&<p style={{padding:24}}>Adınıza atanmış bir tetkik bulunmuyor.</p>}</section></>}
-
-type Task={id:string;criterion_text:string;finding:string;status:string;due_at:string;resolution_text?:string;resolution_photo_url?:string;area_code:string;area_name:string};
-export function AreaOwnerIssues({api,token}:{api:string;token:string}){const[tasks,setTasks]=useState<Task[]>([]),[selected,setSelected]=useState<string>(""),[description,setDescription]=useState(""),[file,setFile]=useState<File|null>(null),[message,setMessage]=useState("");const load=()=>fetch(`${api}/api/corrective-tasks`,{headers:{Authorization:`Bearer ${token}`}}).then(async r=>{const d=await r.json();if(!r.ok)throw new Error(d.error);setTasks(d.tasks);if(!selected&&d.tasks[0])setSelected(d.tasks[0].id)}).catch(e=>setMessage(e.message));useEffect(()=>{load()},[api,token]);const task=tasks.find(t=>t.id===selected);const resolve=async()=>{if(!task||!file||!description.trim())return setMessage("Açıklama ve sonrası fotoğrafı zorunludur.");const form=new FormData();form.set("description",description);form.set("file",file);const r=await fetch(`${api}/api/corrective-tasks/${task.id}/resolve`,{method:"POST",headers:{Authorization:`Bearer ${token}`},body:form});const d=await r.json();if(!r.ok)return setMessage(d.error);setMessage("Uygunsuzluk giderildi olarak kaydedildi.");setDescription("");setFile(null);load()};return <><Title tag="ALAN SORUMLUSU" title="Alanımdaki uygunsuzluklar" text="Yalnızca sorumlu olduğunuz alana atanmış düzeltme görevlerini kapatabilirsiniz."/><div className="dashboard-grid"><section className="panel"><h3>Düzeltme görevleri</h3>{tasks.map(t=><button key={t.id} className="activity" style={{display:"block",width:"100%",textAlign:"left",padding:14,marginTop:8}} onClick={()=>{setSelected(t.id);setMessage("")}}><b>{t.criterion_text}</b><small style={{display:"block",marginTop:5}}>{t.area_code} · {t.area_name} · {t.status==="resolved"?"Giderildi":"Düzeltme bekliyor"}</small></button>)}{!tasks.length&&<p>Alanınıza atanmış uygunsuzluk bulunmuyor.</p>}</section>{task&&<section className="panel"><span className="eyebrow">{task.area_code} · {task.status==="resolved"?"GİDERİLDİ":"DÜZELTME BEKLİYOR"}</span><h2>{task.criterion_text}</h2><p>{task.finding||"Tetkikçi açıklama girmedi."}</p><small>Son tarih: {new Date(task.due_at).toLocaleString("tr-TR")}</small>{task.status==="resolved"?<div><p><b>Giderme açıklaması:</b> {task.resolution_text}</p>{task.resolution_photo_url&&<img src={task.resolution_photo_url} alt="Düzeltme kanıtı" style={{maxWidth:"100%",borderRadius:12}}/>}</div>:<><label className="field">Giderme açıklaması<textarea value={description} onChange={e=>setDescription(e.target.value)} placeholder="Uygunsuzluğun nasıl giderildiğini açıklayın..."/></label><label className="field">Sonrası fotoğrafı<input type="file" accept="image/*" capture="environment" onChange={e=>setFile(e.target.files?.[0]||null)}/></label><button className="primary" onClick={resolve}>Uygunsuzluk giderildi olarak kaydet</button></>}{message&&<p>{message}</p>}</section>}</div></>}
-
-export function AreaOwnerHistory({api,token}:{api:string;token:string}){const[tasks,setTasks]=useState<Task[]>([]),[error,setError]=useState("");useEffect(()=>{fetch(`${api}/api/corrective-tasks?view=history`,{headers:{Authorization:`Bearer ${token}`}}).then(async r=>{const d=await r.json();if(!r.ok)throw new Error(d.error);setTasks(d.tasks)}).catch(e=>setError(e.message))},[api,token]);return <><Title tag="ALAN SORUMLUSU" title="Geçmiş belgelemelerim" text="Daha önce giderildi olarak kaydettiğiniz açıklama ve fotoğraf kanıtları."/><div className="dashboard-grid">{tasks.map(t=><section className="panel" key={t.id}><span className="eyebrow">{t.area_code} · GİDERİLDİ</span><h3>{t.criterion_text}</h3><p><b>Tetkik bulgusu:</b> {t.finding||"Açıklama yok"}</p><p><b>Giderme açıklaması:</b> {t.resolution_text}</p>{t.resolution_photo_url&&<img src={t.resolution_photo_url} alt="Giderme belgesi" style={{width:"100%",maxHeight:260,objectFit:"cover",borderRadius:12}}/>}</section>)}{!tasks.length&&!error&&<section className="panel"><p>Henüz tamamlanmış bir belgelemeniz bulunmuyor.</p></section>}{error&&<p className="danger-text">{error}</p>}</div></>}
-
-type Approval={id:string;audit_id:string;criterion_text:string;finding:string;resolution_text:string;resolution_photo_url:string;area_code:string;area_name:string;responsible_name:string};
-export function ApprovalTasks({api,token}:{api:string;token:string}){const[tasks,setTasks]=useState<Approval[]>([]),[message,setMessage]=useState(""),[reason,setReason]=useState("");const load=()=>fetch(`${api}/api/approvals`,{headers:{Authorization:`Bearer ${token}`}}).then(async r=>{const d=await r.json();if(!r.ok)throw new Error(d.error);setTasks(d.tasks)}).catch(e=>setMessage(e.message));useEffect(()=>{load()},[api,token]);const approve=async(id:string)=>{const r=await fetch(`${api}/api/approvals/${id}/approve`,{method:"POST",headers:{Authorization:`Bearer ${token}`}});const d=await r.json();setMessage(r.ok?(d.auditCompleted?"Düzeltme onaylandı ve tetkik tamamlandı.":"Düzeltme onaylandı; diğer maddeler bekleniyor."):d.error);if(r.ok)load()};const reject=async(id:string)=>{if(!reason.trim())return setMessage("Ret açıklaması zorunludur.");const r=await fetch(`${api}/api/approvals/${id}/reject`,{method:"POST",headers:{Authorization:`Bearer ${token}`,"content-type":"application/json"},body:JSON.stringify({reason})});const d=await r.json();setMessage(r.ok?"Düzeltme reddedildi ve alan sorumlusuna geri gönderildi.":d.error);if(r.ok){setReason("");load()}};return <><Title tag="MÜDÜRLÜK YÖNETİCİSİ" title="Düzeltme onayları" text="Alan sorumlusunun açıklamasını ve fotoğrafını inceleyerek kabul veya ret verin."/><div className="dashboard-grid">{tasks.map(t=><section className="panel" key={t.id}><span className="eyebrow">{t.area_code} · ONAY BEKLİYOR</span><h3>{t.criterion_text}</h3><p><b>Tetkik bulgusu:</b> {t.finding||"Açıklama yok"}</p><p><b>Alan sorumlusu:</b> {t.responsible_name}</p><p><b>Giderme açıklaması:</b> {t.resolution_text}</p>{t.resolution_photo_url&&<img src={t.resolution_photo_url} alt="Düzeltme kanıtı" style={{width:"100%",maxHeight:280,objectFit:"cover",borderRadius:12}}/>}<label className="field">Ret açıklaması<textarea value={reason} onChange={e=>setReason(e.target.value)} placeholder="Yalnızca reddedecekseniz gerekçeyi yazın..."/></label><div className="detail-actions"><button className="outline" onClick={()=>reject(t.id)}>Reddet ve geri gönder</button><button className="primary" onClick={()=>approve(t.id)}>Onayla ve kapat ✓</button></div></section>)}{!tasks.length&&<section className="panel"><p>Onay bekleyen düzeltme bulunmuyor.</p></section>}</div>{message&&<p>{message}</p>}</>}
+function FindingPhoto({ url, index }: { url: string; index: number }) {
+    const [failed, setFailed] = useState(false);
+    // Uploaded evidence uses HTTP(S) URLs or same-origin upload paths.
+    if (!/^(https?:\/\/|\/(?!\/))/i.test(url)) return <p>Fotoğraf adresi geçersiz.</p>;
+    return <figure className="finding-photo">
+        {failed ? <p>Fotoğraf yüklenemedi. Dosya sunucusuna erişimi kontrol edin.</p> : <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`Uygunsuzluk fotoğrafı ${index + 1}: büyük görüntüle`}>
+            <img src={url} alt={`Tetkikçinin kaydettiği uygunsuzluk — fotoğraf ${index + 1}`} loading="lazy" onError={() => setFailed(true)} />
+        </a>}
+        <figcaption>Fotoğraf {index + 1} · {failed ? "Görüntülenemiyor" : "Büyütmek için fotoğrafa tıklayın"}</figcaption>
+    </figure>;
+}
+export function AreaOwnerHistory({ api, token }: {
+    api: string;
+    token: string;
+}) { const [tasks, setTasks] = useState<Task[]>([]), [error, setError] = useState(""); useEffect(() => { fetch(`${api}/api/corrective-tasks?view=history`, { headers: { Authorization: `Bearer ${token}` } }).then(async (r) => { const d = await r.json(); if (!r.ok)
+    throw new Error(d.error); setTasks(d.tasks); }).catch(e => setError(e.message)); }, [api, token]); return <><Title tag="ALAN SORUMLUSU" title="Geçmiş belgelemelerim" text="Daha önce giderildi olarak kaydettiğiniz açıklama ve fotoğraf kanıtları."/><div className="dashboard-grid">{tasks.map(t => <section className="panel" key={t.id}><span className="eyebrow">{t.area_code} · GİDERİLDİ</span><h3>{t.criterion_text}</h3><p><b>Tetkik bulgusu:</b> {t.finding || "Açıklama yok"}</p><p><b>Giderme açıklaması:</b> {t.resolution_text}</p>{t.resolution_photo_url && <img src={t.resolution_photo_url} alt="Giderme belgesi" style={{ width: "100%", maxHeight: 260, objectFit: "cover", borderRadius: 12 }}/>}</section>)}{!tasks.length && !error && <section className="panel"><p>Henüz tamamlanmış bir belgelemeniz bulunmuyor.</p></section>}{error && <p className="danger-text">{error}</p>}</div></>; }
+type Approval = {
+    id: string;
+    audit_id: string;
+    criterion_text: string;
+    finding: string;
+    resolution_text: string;
+    resolution_photo_url: string;
+    area_code: string;
+    area_name: string;
+    responsible_name: string;
+};
+export function ApprovalTasks({ api, token }: {
+    api: string;
+    token: string;
+}) { const [tasks, setTasks] = useState<Approval[]>([]), [message, setMessage] = useState(""), [reason, setReason] = useState(""); const load = () => fetch(`${api}/api/approvals`, { headers: { Authorization: `Bearer ${token}` } }).then(async (r) => { const d = await r.json(); if (!r.ok)
+    throw new Error(d.error); setTasks(d.tasks); }).catch(e => setMessage(e.message)); useEffect(() => { load(); const timer = setInterval(load, 5000); window.addEventListener("focus", load); return () => { clearInterval(timer); window.removeEventListener("focus", load); }; }, [api, token]); const approve = async (id: string) => { const r = await fetch(`${api}/api/approvals/${id}/approve`, { method: "POST", headers: { Authorization: `Bearer ${token}` } }); const d = await r.json(); setMessage(r.ok ? (d.auditCompleted ? "Düzeltme onaylandı ve tetkik tamamlandı." : "Düzeltme onaylandı; diğer maddeler bekleniyor.") : d.error); if (r.ok)
+    load(); }; const reject = async (id: string) => { if (!reason.trim())
+    return setMessage("Ret açıklaması zorunludur."); const r = await fetch(`${api}/api/approvals/${id}/reject`, { method: "POST", headers: { Authorization: `Bearer ${token}`, "content-type": "application/json" }, body: JSON.stringify({ reason }) }); const d = await r.json(); setMessage(r.ok ? "Düzeltme reddedildi ve alan sorumlusuna geri gönderildi." : d.error); if (r.ok) {
+    setReason("");
+    load();
+} }; return <><Title tag="ÜNİTE SORUMLUSU" title="Düzeltme onayları" text="Alan sorumlusunun açıklamasını ve fotoğrafını inceleyerek kabul veya ret verin."/><div className="dashboard-grid">{tasks.map(t => <section className="panel" key={t.id}><span className="eyebrow">{t.area_code} · ONAY BEKLİYOR</span><h3>{t.criterion_text}</h3><p><b>Tetkik bulgusu:</b> {t.finding || "Açıklama yok"}</p><p><b>Alan sorumlusu:</b> {t.responsible_name}</p><p><b>Giderme açıklaması:</b> {t.resolution_text}</p>{t.resolution_photo_url && <img src={t.resolution_photo_url} alt="Düzeltme kanıtı" style={{ width: "100%", maxHeight: 280, objectFit: "cover", borderRadius: 12 }}/>}<label className="field">Ret açıklaması<textarea value={reason} onChange={e => setReason(e.target.value)} placeholder="Yalnızca reddedecekseniz gerekçeyi yazın..."/></label><div className="detail-actions"><button className="outline" onClick={() => reject(t.id)}>Reddet ve geri gönder</button><button className="primary" onClick={() => approve(t.id)}>Onayla ve kapat ✓</button></div></section>)}{!tasks.length && <section className="panel"><p>Onay bekleyen düzeltme bulunmuyor.</p></section>}</div>{message && <p>{message}</p>}</>; }
